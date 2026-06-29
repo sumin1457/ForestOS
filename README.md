@@ -1,4 +1,4 @@
-# Forest OS Ontology
+# Forest OS 
 
 A pharmacological reasoning ontology encoding 
 context-specific bidirectional mediator cascades
