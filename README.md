@@ -14,8 +14,8 @@ the ontology infers:
 
 ## Conceptual Framework
 
-![Clinical Framework](diagrams/clinical_framework.png)
-![Asthma Cascade](diagrams/asthma_cascade.png)
+![Clinical Framework](Clinical_Framework.png)
+![Asthma Cascade](Asthma_Figjam.png)
 
 The ontology separates five ontological modes:
 
@@ -103,8 +103,8 @@ Orthogonal descriptive axes:
 
 ## Status
 
-Phase 1 complete: Asthma cascade + therapeutic queries
-Phase 2 active: DL Query + SPARQL transition
+- Phase 1 complete: Asthma cascade + therapeutic queries
+- Phase 2 active: DL Query + SPARQL transition
 
 ## Background
 
