@@ -12,6 +12,17 @@ the ontology infers:
 - At which biological layer each drug intervenes
 - Which drugs target the immune cascade vs symptomatic relief
 
+## Why Forest?
+
+The body is an ecosystem — trillions of interconnected 
+processes, each a branch in a living system. Health is 
+the forest in balance. Disease is not a separate entity 
+but a disruption of that balance, cascading through layers.
+
+Forest OS models this directly: the same L4→L3→L2→L1 
+cascade that operates in homeostasis produces disease 
+when disrupted. The forest metaphor is the architecture.
+
 ## Conceptual Framework
 
 ![Clinical Framework](diagrams/Clinical_Framework.png)
