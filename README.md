@@ -14,8 +14,8 @@ the ontology infers:
 
 ## Conceptual Framework
 
-![Clinical Framework](Clinical_Framework.png)
-![Asthma Cascade](Asthma_Figjam.png)
+![Clinical Framework](diagrams/Clinical_Framework.png)
+![Asthma Cascade](diagrams/Asthma_Figjam.png)
 
 The ontology separates five ontological modes:
 
