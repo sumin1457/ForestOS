@@ -10,10 +10,10 @@ produces disease when its balance is disrupted.
 
 ## Start Here — The Four Layers
 
-L4: Genetic predisposition (WHY someone is susceptible)
-L3: Immune cascade (HOW the immune system responds)
-L2: Biochemical mediators (WHAT molecules are released)
-L1: Infrastructure (WHERE the physical disruption occurs)
+- L4: Genetic predisposition (WHY someone is susceptible)
+- L3: Immune cascade (HOW the immune system responds)
+- L2: Biochemical mediators (WHAT molecules are released)
+- L1: Infrastructure (WHERE the physical disruption occurs)
 
 ## The Key Pattern: hasResponsePattern
 
