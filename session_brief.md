@@ -500,6 +500,7 @@ S12: therapeutic_suppression(?drug, ?t) → sqwrl:select(?drug) ^ sqwrl:count(?t
 Reasoner: Pellet 2.2.0 (not HermiT — fails on SWRL built-ins)
 Known issue: Protégé sync — restart when SQWRL returns empty
              despite OWL reasoner showing correct inferences
+             sqwrl:columnNames issue - Pellet cannot read SWRL
 
 Literal matching: ensure "direct"^^xsd:string consistency
                   across data property assertions and SWRL rules
