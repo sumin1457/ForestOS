@@ -97,9 +97,10 @@ Orthogonal descriptive axes:
 
 1. Install [Protégé 5.6.9](https://protege.stanford.edu/)
 2. Install Pellet reasoner plugin
-3. Open `ontology/forest_os_ontology.owx`
-4. Reasoner → Pellet → Start Reasoner
-5. Open SQWRLTab to run queries
+3. Open Ontology folder
+4. Open `ontology/forest_os_ontology.owx`
+5. Reasoner → Pellet → Start Reasoner
+6. Open SQWRLTab to run queries
 
 ## Status
 
