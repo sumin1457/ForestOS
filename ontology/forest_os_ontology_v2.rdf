@@ -1,0 +1,2666 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#"
+     xml:base="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asserted_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asserted_Logic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#System_Regulation_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biological_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biological_Logic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Logic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention_Logic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#External_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#External_Logic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Inferred_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Inferred_Logic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#System_Regulation_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macro-Clinical_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macro-Clinical_Logic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms_Logic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#System_Progression_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#System_Progression_Logic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biological_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#System_Regulation_Logic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#System_Regulation_Logic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biological_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#causes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#causes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Inferred_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#downregulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#downregulates">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_mechanistically"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_complication -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_complication">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macro-Clinical_Logic"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_etiology -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_etiology">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macro-Clinical_Logic"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_manifestation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_manifestation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macro-Clinical_Logic"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Manifestation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macro-Clinical_Logic"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_etiology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_etiology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#inhibits"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_etiology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#triggers"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#inhibits"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#targets"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asserted_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#inhibits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#inhibits">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asserted_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#leads_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#leads_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#modulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#modulates">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asserted_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_functionally -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_functionally">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_mechanistically -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_mechanistically">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#progresses_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#progresses_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#System_Progression_Logic"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Pathological_State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Pathological_State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#promotes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#promotes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Inferred_Logic"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#promotes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#promotes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#targets"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#suppresses -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#suppresses">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Inferred_Logic"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#suppresses"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#suppresses"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#targets"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#targets -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#targets">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asserted_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#therapeutic_activation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#therapeutic_activation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_functionally"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#therapeutic_suppression -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#therapeutic_suppression">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_functionally"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#triggers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#triggers">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#External_Logic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#upregulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#upregulates">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#perturbs_mechanistically"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasResponsePattern -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasResponsePattern">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>direct</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>inverse</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#intervenesAtLayerScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#intervenesAtLayerScore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#occursIn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#occursIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ACE_Inhibitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ACE_Inhibitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Mediator_Antagonist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Acute_Functional_Disruption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Acute_Functional_Disruption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Pathological_State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Adaptive_Immunity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Adaptive_Immunity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Structural_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Interstitial_Substrate"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Parenchymal_Substrate"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Exposure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Exposure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Environmental_Trigger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Sensitisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Sensitisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Adaptive_Immunity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Anaemia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Anaemia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Antiplatelet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Antiplatelet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Mediator_Antagonist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Arrythymia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Arrythymia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atherosclerosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atherosclerosis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_System"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Structural_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Vascular_Substrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atopy_Predispostion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atopy_Predispostion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Predispostion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atrial_Fibrillation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atrial_Fibrillation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Arrythymia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta-Blocker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta-Blocker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Mediator_Antagonist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biological_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biological_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Mechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomarkers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomarkers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Manifestation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Blood_Clot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Blood_Clot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Acute_Functional_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Acute_Functional_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Parenchymal_Substrate"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Mechanism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Mechanism">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Structural_Substrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Structural_Substrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Descriptive_Axes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Target_Layer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Target_Layer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#COPD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#COPD">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cell_Mediated_Sensitisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cell_Mediated_Sensitisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Sensitisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Structural_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Interstitial_Substrate"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Parenchymal_Substrate"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Universial_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Kidney_Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Kidney_Disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Renal_Diseases"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_complication"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypertension"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_etiology"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Nephron_Fibrosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Structural_Disruption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Structural_Disruption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Pathological_State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Framing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Framing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Framing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Manifestation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Manifestation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mediator_Profile"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mediator_Profile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Corticosteroid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Corticosteroid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immunomodulator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cough -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cough">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Descriptive_Axes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Descriptive_Axes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Drug_Intervention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Therapeutic_Perturbation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eicosanoids -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eicosanoids">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Environmental_Trigger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Environmental_Trigger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#External_Trigger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eosinophil_Recruitment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eosinophil_Recruitment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Innate_Immunity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epigenetic_Modification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epigenetic_Modification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L4_Genetic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epithelial_Damage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epithelial_Damage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Structural_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Parenchymal_Substrate"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Universial_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#External_Trigger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#External_Trigger"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Fatigue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Fatigue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Feedback_Regulated_Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Feedback_Regulated_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mediator_Profile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#GI_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#GI_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Mutation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Mutation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L4_Genetic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Predispostion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Predispostion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L4_Genetic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#HER2_Overexpression -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#HER2_Overexpression">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Mutation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Heart_Failure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Heart_Failure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Histamine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Histamine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypertension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypertension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_Sensitisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_Sensitisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Sensitisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Adaptive_Immunity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Feedback_Regulated_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Infectious_Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Infectious_Disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Innate_Immunity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Innate_Immunity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Interstitial_Substrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Interstitial_Substrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Structural_Substrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Iron_Deficiency_Anaemia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Iron_Deficiency_Anaemia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Anaemia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Acute_Functional_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Universial_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemic_Heart_Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemic_Heart_Disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Functional_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Functional_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Target_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Mediator_Antagonist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Mediator_Antagonist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Target_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immune -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immune">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immunomodulator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immunomodulator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Target_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L4_Genetic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L4_Genetic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDLR_Mutation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDLR_Mutation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Predispostion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LTRA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LTRA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Mediator_Antagonist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eicosanoids"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Liver_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Liver_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Lung_Cancer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Lung_Cancer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oncological_Conditions"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Genetic_Mutation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macrophage_Activation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Macrophage_Activation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Innate_Immunity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Maligant_Tissue_Growth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Maligant_Tissue_Growth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Parenchymal_Substrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mast_Cell_Degranulation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mast_Cell_Degranulation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Adaptive_Immunity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Innate_Immunity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mediator_Profile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mediator_Profile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Descriptive_Axes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Myocardial_Infarction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Myocardial_Infarction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemic_Heart_Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Necrosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Necrosis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Structural_Disruption"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Universial_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Nephron_Fibrosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Nephron_Fibrosis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Renal_System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Neural_Substrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Neural_Substrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Structural_Substrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Omalizumab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Omalizumab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immunomodulator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oncological_Conditions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oncological_Conditions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Parenchymal_Substrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Parenchymal_Substrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Structural_Substrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Pathological_State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Pathological_State">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Descriptive_Axes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Plaque_Rupture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Plaque_Rupture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_System"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Vascular_Substrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Platelet_Activation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Platelet_Activation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Signalling_Intermediate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Prostacyclin_Production -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Prostacyclin_Production">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eicosanoids"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_Production"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Prostaglandin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Prostaglandin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eicosanoids"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Feedback_Regulated_Entity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Receptor_Mediated_Signaller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Receptor_Mediated_Signaller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mediator_Profile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Renal_Diseases -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Renal_Diseases">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Renal_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Renal_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_Diseases -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_Diseases">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SNS_Activation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SNS_Activation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Feedback_Regulated_Entity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Sickle_Cell_Anaemia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Sickle_Cell_Anaemia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Anaemia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Signalling_Intermediate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Signalling_Intermediate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mediator_Profile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Small_Molecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Small_Molecule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Mechanism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Stable_Angina -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Stable_Angina">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemic_Heart_Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Statin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Statin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Mediator_Antagonist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Stroke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Stroke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Manifestation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_Activation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_Activation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Adaptive_Immunity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Therapeutic_Perturbation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Therapeutic_Perturbation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Thromboxane_A2_Signalling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Thromboxane_A2_Signalling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eicosanoids"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Trastuzumab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Trastuzumab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immunomodulator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Universial_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Universial_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Unstable_Angina -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Unstable_Angina">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemic_Heart_Disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Vascular_Substrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Vascular_Substrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#By_Structural_Substrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Symptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_Production -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_Production">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L2_Hormone_and_biochemical_signalling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SABA/LABA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SABA/LABA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L1_Functional_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ACEi_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ACEi_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ACE_Inhibitor"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling_asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling_asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath_instance"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Exposure_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Exposure_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Exposure"/>
+        <triggers rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_asthma_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Antiplatelet_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Antiplatelet_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Antiplatelet"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#TXA2_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Blood_Clot_mi_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma"/>
+        <has_etiology rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Allergen_Exposure_instance"/>
+        <has_etiology rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atopy_Predisposition_instance"/>
+        <has_manifestation rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain_instance"/>
+        <has_manifestation rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cough_instance"/>
+        <has_manifestation rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath_instance"/>
+        <has_manifestation rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze_instance"/>
+        <has_pathophysiology rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <has_pathophysiology rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_asthma_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atherosclerosis_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atherosclerosis_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atherosclerosis"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Plaque_Rupture_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atopy_Predisposition_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atopy_Predisposition_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atopy_Predispostion"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_asthma_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta_Blocker_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta_Blocker_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta-Blocker"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SNS_Activation_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Blood_Clot_mi_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Blood_Clot_mi_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Blood_Clot"/>
+        <progresses_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance"/>
+        <occursIn>Cardiovascular</occursIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath_instance"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze_instance"/>
+        <progresses_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling_asthma_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation_asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation_asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain_instance"/>
+        <progresses_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling_asthma_instance"/>
+        <occursIn>Respiratory</occursIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Corticosteroid_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Corticosteroid_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Corticosteroid"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MastCell_instance"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Airway_Remodelling_asthma_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation_asthma_instance"/>
+        <intervenesAtLayerScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</intervenesAtLayerScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cough_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cough_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cough"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eosinophil_asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eosinophil_asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eosinophil_Recruitment"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epithelial_Damage_Respiratory_instance"/>
+        <occursIn>Respiratory</occursIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epithelial_Damage_Respiratory_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epithelial_Damage_Respiratory_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Epithelial_Damage"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cough_instance"/>
+        <progresses_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation_asthma_instance"/>
+        <occursIn>Respiratory</occursIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Fatigue_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Fatigue_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Fatigue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Histamine_asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Histamine_asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Histamine"/>
+        <targets rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <hasResponsePattern>direct</hasResponsePattern>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atherosclerosis_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Mediated_Sensitisation"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MastCell_instance"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MastCell_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation_instance"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SNS_Activation_instance"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain_instance"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath_instance"/>
+        <progresses_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Necrosis_heart_instance"/>
+        <occursIn>Cardiovascular_System</occursIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDLR_Instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDLR_Instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDLR_Mutation"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LTRA_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LTRA_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LTRA"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene_asthma_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chronic_Inflammation_asthma_instance"/>
+        <intervenesAtLayerScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</intervenesAtLayerScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene_asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene_asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene"/>
+        <targets rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <hasResponsePattern>direct</hasResponsePattern>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MI_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MI_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Myocardial_Infarction"/>
+        <has_etiology rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia_instance"/>
+        <has_manifestation rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Chest_Pain_instance"/>
+        <has_manifestation rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Fatigue_instance"/>
+        <has_manifestation rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath_instance"/>
+        <has_pathophysiology rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia_instance"/>
+        <has_pathophysiology rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MastCell_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MastCell_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Mast_Cell_Degranulation"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Histamine_asthma_instance"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene_asthma_instance"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#PGD2_asthma_instance"/>
+        <occursIn>Respiratory</occursIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Necrosis_heart_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Necrosis_heart_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Necrosis"/>
+        <leads_to rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Fatigue_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Omalizumab_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Omalizumab_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Omalizumab"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MastCell_instance"/>
+        <intervenesAtLayerScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</intervenesAtLayerScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#PGD2_asthma_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#PGD2_asthma_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Prostaglandin"/>
+        <targets rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <hasResponsePattern>direct</hasResponsePattern>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#PGI2_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#PGI2_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Prostacyclin_Production"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_PGI2_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Plaque_Rupture_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Plaque_Rupture_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Plaque_Rupture"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#TXA2_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Platelet_Activation_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Platelet_Activation_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Platelet_Activation"/>
+        <targets rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Blood_Clot_mi_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#RAAS_Activation"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SABA_LABA_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SABA_LABA_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SABA/LABA"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <upregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_ASM_instance"/>
+        <intervenesAtLayerScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</intervenesAtLayerScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SNS_Activation_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SNS_Activation_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SNS_Activation"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Ischaemia_endocardium_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Shortness_of_Breath"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Statin_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Statin_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Statin"/>
+        <downregulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Hypercholesterolaemia_instance"/>
+        <therapeutic_suppression rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Atherosclerosis_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#TXA2_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#TXA2_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Thromboxane_A2_Signalling"/>
+        <inhibits rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_TXA2_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_Activation"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Eosinophil_asthma_instance"/>
+        <increases rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Wheeze"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_ASM_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_ASM_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_Production"/>
+        <targets rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bronchoconstriction_instance"/>
+        <hasResponsePattern>inverse</hasResponsePattern>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_PGI2_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_PGI2_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_Production"/>
+        <modulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Platelet_Activation_instance"/>
+        <hasResponsePattern>inverse</hasResponsePattern>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_TXA2_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_TXA2_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#cAMP_Production"/>
+        <modulates rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Platelet_Activation_instance"/>
+        <hasResponsePattern>inverse</hasResponsePattern>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Biomedical_Layer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Framing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Clinical_Manifestation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#External_Trigger"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Therapeutic_Perturbation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cardiovascular_System"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#GI_System"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Liver_System"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Renal_System"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Respiratory_System"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#score">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rule 1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#inhibits"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                        <swrl:argument2>low</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S6 - Immune-Targeting Drug</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3_Immune"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#downregulates"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#L3"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#therapeutic_suppression"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_etiology"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma_instance"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#x"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_manifestation"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma_instance"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="urn:swrl:var#s"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S7 - Drug x Layer x Target table</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#has_pathophysiology"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Asthma_instance"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#therapeutic_suppression"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#intervenesAtLayerScore"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#score"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#score"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#orderByDescending"/>
+                                <swrl:arguments rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#score"/>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#promotes"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#m"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="urn:swrl:var#m"/>
+                            <rdf:Description rdf:about="urn:swrl:var#t"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#suppresses"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#m"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="urn:swrl:var#m"/>
+                            <rdf:Description rdf:about="urn:swrl:var#t"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#therapeutic_suppression"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#drug"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#t"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rule A</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#modulates"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Signalling_Intermediate"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                                <swrl:argument2>high</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasResponsePattern"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                                        <swrl:argument2>direct</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#promotes"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rule C</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#modulates"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Signalling_Intermediate"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasResponsePattern"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                                <swrl:argument2>inverse</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                                        <swrl:argument2>high</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#suppresses"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rule B</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                <swrl:argument2>low</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#modulates"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Signalling_Intermediate"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasResponsePattern"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                                        <swrl:argument2>direct</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#suppresses"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rule D</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                <swrl:argument2>low</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#modulates"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Signalling_Intermediate"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasResponsePattern"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                                                        <swrl:argument2>inverse</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#promotes"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Rule 2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Concentration_Dependent_Mediator"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#increases"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#hasConcentrationLevel"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#m"/>
+                        <swrl:argument2>high</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
