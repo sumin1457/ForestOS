@@ -74,6 +74,7 @@ clinical goal does that produce?"
 
 Full result set: [`SPARQL/results/drug_mechanistic_target_clinical_goal.csv`](SPARQL/results/drug_mechanistic_target_clinical_goal.csv)
 
+SPARQL Query Description: [`SPARQL/RESULT.md`](SPARQL/RESULT.md)
 
 ## Architecture
 
