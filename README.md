@@ -139,7 +139,7 @@ ABox instance sets: [`docs/architecture.md`](docs/architecture.md)
 |---|---|
 | [`docs/architecture.md`](docs/architecture.md) | Full TBox, RBox, SWRL rules, and ABox instance sets |
 | [`docs/key_findings.md`](docs/key_findings.md) | Architectural decisions and reasoning, design philosophy |
-| [`docs/known_limitations.md`](docs/known_limitations.md) | Open modeling tensions and planned resolutions — e.g. why cross-disease shared-node detection currently undercounts real physiological overlap |
+| [`docs/known_limitation.md`](docs/known_limitation.md) | Open modeling tensions and planned resolutions — e.g. why cross-disease shared-node detection currently undercounts real physiological overlap |
 | [`docs/v2_vision.md`](docs/v2_vision.md) | Homeostasis-as-primary architecture and Named Graph disease-context isolation |
 | [`SPARQL/RESULTS.md`](SPARQL/RESULTS.md) | Narrated walkthrough of the SPARQL query library and results |  
 
