@@ -1,0 +1,10 @@
+﻿name,layer,targetName
+Corticosteroid,3,MastCell
+Corticosteroid,3,Th2
+Omalizumab,3,IgE_Signalling
+ACEi,2,RAAS_Activation
+Antiplatelet,2,TXA2
+Beta_Blocker,2,SNS_Activation
+LTRA,2,Leukotriene_asthma
+SABA_LABA,2,cAMP_ASM
+Statin,2,Hypercholesterolaemia
