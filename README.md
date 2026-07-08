@@ -99,10 +99,10 @@ Orthogonal descriptive axes:
 - SQWRL query language
 
 ## Ontology Statistics
-- 114 classes
-- 31 object properties  
-- 32 individuals
-- 315 logical axioms
+- 115 classes
+- 32 object properties  
+- 44 individuals
+- 350 logical axioms
 
 ## Setup
 
@@ -117,6 +117,7 @@ Orthogonal descriptive axes:
 
 - Phase 1 complete: Asthma cascade + therapeutic queries
 - Phase 2 active: DL Query + SPARQL transition
+- Phase 3 active: SPARQL + Python + ODE 
 
 ## Background
 
