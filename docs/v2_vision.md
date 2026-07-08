@@ -13,7 +13,7 @@ Novel aspects:
 
 ```
 
-### 3 — Forest OS v2 Vision
+### Forest OS v2 Vision
 
 ```
 Current (v1): pathology as primary — Bronchoconstriction IS pathological
