@@ -165,5 +165,5 @@ Reference tag: [`v1.0-mi-complete`](../../releases/tag/v1.0-mi-complete)
 ## Background
 
 Built by a 3rd year(26/27) MPharm student at University 
-of Manchester exploring biomedical ontology engineering.
+of Manchester exploring biomedical knowledge architecture.
 Pursuing SNOMED-CT certification.
