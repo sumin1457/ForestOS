@@ -57,15 +57,24 @@ represent health and disease within a single unified framework.
 
 ## Example Query
 
-"Which drugs treat asthma, and at what layer do they act?"
+A drug's mechanistic target and its clinical consequences are 
+tracked as distinct, separately-queryable relations 
+(`perturbs_mechanistically` vs `perturbs_functionally`) — so a 
+single mechanism can be shown producing multiple downstream 
+clinical effects:
 
-Returns:
-| Drug           | Layer | Target              |
-|----------------|-------|---------------------|
-| Corticosteroid | L3    | Bronchoconstriction |
-| Omalizumab     | L3    | Bronchoconstriction |
-| LTRA           | L2    | Bronchoconstriction |
-| SABA/LABA      | L1    | Bronchoconstriction |
+"For each drug, what does it hit mechanistically, and what 
+clinical goal does that produce?"
+
+| Drug           | Mechanistic Target | Clinical Goal                |
+|----------------|---------------------|-------------------------------|
+| Corticosteroid | MastCell            | Airway_Remodelling_asthma    |
+| Corticosteroid | MastCell            | Chronic_Inflammation_asthma  |
+| Beta_Blocker   | SNS_Activation      | Ischaemia_endocardium        |
+
+Full result set: [`SPARQL/results/drug_mechanistic_target_clinical_goal.csv`](SPARQL/results/drug_mechanistic_target_clinical_goal.csv)
+
+SPARQL Query Full Description: [`SPARQL/RESULTS.md`](SPARQL/RESULTS.md)
 
 ## Architecture
 
@@ -92,11 +101,35 @@ Orthogonal descriptive axes:
 3. Faceted L1 infrastructure — orthogonal organ system
    × structural substrate axes with intersection classes
 
+4. perturbs_mechanistically / perturbs_functionally — separates 
+   a drug's biological target (upregulates/downregulates) from 
+   its clinical intent (therapeutic_suppression/therapeutic_activation), 
+   making side effects and off-target consequences formally derivable 
+   rather than hand-coded
+
+## SPARQL Queries
+
+Query library lives in [`SPARQL/`](SPARQL/) — each `.rq` file has a 
+matching `.csv` result in `SPARQL/results/`. See 
+[`SPARQL/RESULTS.md`](SPARQL/RESULTS.md) for a narrated walkthrough 
+of what each query demonstrates, including a known modeling 
+limitation around cross-disease shared nodes (currently only 2 
+detected between MI and Asthma — see RESULTS.md for why, and the 
+planned GraphDB-level fix).
+
 ## Tools
 
 - Protégé 5.6.9 (OWL 2.0.0)
 - Pellet Reasoner Plug-in 2.2.0.(SWRL support)
-- SQWRL query language
+- GraphDB: Triple store + SPARQL reasoning
+- Python: Graph traversal and validation, replacing SWRL (+ODE)
+
+**Note:** SWRL rules and the Pellet/SQWRL query pipeline used in 
+early development have been removed. Only hasResponsePattern SWRL remians. 
+Cross-cascade reasoning (e.g. multi-hop `increases`/`inhibits`/`leads_to` traversal) is 
+now handled via SPARQL property paths against GraphDB rather than 
+custom SWRL rules — this scales more cleanly across diseases and 
+is directly queryable rather than requiring a rule re-run per case.
 
 ## Ontology Statistics
 - 115 classes
@@ -109,15 +142,25 @@ Orthogonal descriptive axes:
 1. Install [Protégé 5.6.9](https://protege.stanford.edu/)
 2. Install Pellet reasoner plugin
 3. Open Ontology folder
-4. Open `ontology/forest_os_ontology.owx`
+4. Open `ontology/forest_os_ontology_v2.rdf`
 5. Reasoner → Pellet → Start Reasoner
 6. Open SQWRLTab to run queries
 
 ## Status
 
-- Phase 1 complete: Asthma cascade + therapeutic queries
-- Phase 2 active: DL Query + SPARQL transition
-- Phase 3 active: SPARQL + Python + ODE 
+**Phase 1 complete:** Asthma cascade + MI cascade mapped, 
+therapeutic queries validated via SPARQL against GraphDB
+
+**Phase 1.5 complete:** SWRL rules removed (superseded by 
+Python + GraphDB reasoning); object properties cleaned for 
+disease co-occurrence; `perturbs_mechanistically` / 
+`perturbs_functionally` asserted across all mapped drugs
+
+**Phase 2 active:** Python (via ODE)
+
+**Phase 3 inactive:**  SNOMED-CT alignment, Graph DB
+
+Reference tag: [`v1.0-mi-complete`](../../releases/tag/v1.0-mi-complete)
 
 ## Background
 
