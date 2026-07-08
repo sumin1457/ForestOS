@@ -116,7 +116,7 @@ ABox instance sets: [`docs/architecture.md`](docs/architecture.md)
 
 ## Research-style framing 
 
-1. hasResponsePattern — generalised pharmacological
+1. **hasResponsePattern** — generalised pharmacological
    directionality pattern encoding context-specific
    bidirectionality in concentration-dependent mediators
 
