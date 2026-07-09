@@ -1,0 +1,10 @@
+﻿drugName,targetNode,layer,eliminatedNodes
+Statin,Hypercholesterolaemia,2,10
+Corticosteroid,Th2,3,10
+Antiplatelet,TXA2,2,7
+Omalizumab,IgE_Signalling,3,6
+Corticosteroid,MastCell,3,5
+ACEi,RAAS_Activation,2,4
+Beta_Blocker,SNS_Activation,2,4
+LTRA,Leukotriene_asthma,2,2
+SABA_LABA,cAMP_ASM,2,2
