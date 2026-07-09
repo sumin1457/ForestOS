@@ -1,0 +1,9 @@
+PREFIX : <http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#>
+
+SELECT DISTINCT (Replace(STRAFTER(STR(?node), "#"), "_instance", "") AS ?sharedNode) WHERE {
+        :MI_instance (:has_etiology|:has_pathophysiology) ?entry1 .
+    ?entry1(:increases|:inhibits|:modulates|:promotes|:targets|:progresses_to|:leads_to)* ?node .
+       :Asthma_instance (:has_etiology|:has_pathophysiology) ?entry2 .
+        ?entry2 (:increases|:inhibits|:modulates|:promotes|:suppresses|:targets|:progresses_to|:leads_to)* ?node
+ 
+}
