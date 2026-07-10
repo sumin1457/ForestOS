@@ -191,9 +191,10 @@ Python + GraphDB reasoning); object properties cleaned for
 disease co-occurrence; `perturbs_mechanistically` / 
 `perturbs_functionally` asserted across all mapped drugs
 
-**Phase 2 active:** Reification of cascade edges (CascadeEdge 
+**Phase 2 active:** Named Graph solving universial nodes problem;
+Reification of cascade edges (CascadeEdge 
 individuals carrying rate constants) feeding a Python ODE simulation 
-layer; DL Query exploration; SNOMED-CT alignment
+layer; SNOMED-CT alignment
 
 Reference tag: [`v1.0-mi-complete`](../../releases/tag/v1.0-mi-complete)
 
