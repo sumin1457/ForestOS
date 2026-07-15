@@ -39,16 +39,32 @@ Full combined view — drug, layer, mechanistic target, and clinical goal in a s
 
 ---
 
+## 3. Upstream & Directional Queries
+
+### `upstream_cause_finder.csv`
+Reverse traversal — given a clinical outcome, walks backward through the same property chain to find everything upstream that caused it. Querying upstream of `Ischaemia_endocardium` returns `Blood_Clot_mi`, `Platelet_Activation`, `cAMP_TXA2`, `cAMP_PGI2`, and `TXA2`. This confirms the property paths are genuinely bidirectional — the ontology isn't just built to answer "what does this disease do downstream," it can answer "why did this happen" using the same edges, just walked in the opposite direction. A different competency question from everything in §1 and §2, answered without adding a single new property.
+
+### `symptoms_by_disease.csv`
+Traverses a disease's full etiology/pathophysiology chain but terminates only at `Clinical_Manifestation` nodes via `:leads_to`, rather than returning every mechanism-level node along the way. For MI, this returns `Shortness_of_Breath`, `Chest_Pain`, and `Fatigue` — the observable surface of the cascade, not its internal mechanics. This is the query that would actually answer "what would a patient present with," which is a meaningfully different question from the pathophysiology union/intersection queries in §1.
+
+*Note*: Changing MI_instance to Asthma_instance will show the symptoms of Asthma.
+
+### `drug_therapeutic_leverage.csv` — notable result
+For each drug, counts how many downstream nodes get eliminated by intervening at its mechanistic target, grouped by layer and ranked descending. This is the first *ranking* query in the set rather than a lookup, and it surfaces a genuinely interesting result: Statin (acting at layer 2, on Hypercholesterolaemia) and Corticosteroid (acting at layer 3, on Th2) both eliminate exactly 10 downstream nodes — the same therapeutic leverage achieved by intervening at different structural depths. Antiplatelet, Omalizumab, and the rest of the mapped drugs follow with decreasing leverage down to 2 nodes each. This is the four-layer model doing real explanatory work: breadth of downstream effect and depth of intervention turn out to be separate axes, and this query is what makes that visible instead of merely assumed.
+
 ## Summary
 
 | Query | Rows | Purpose |
 |---|---|---|
-| `pathophysiology_asthma_mi.csv` | 29 | Union — completeness check |
-| `pathophysiology_shared_nodes_mi_asthma.csv` | 2 | Intersection — comorbidity signal |
-| `mi_drug_mechanistic_target.csv` | 4 | MI-only baseline |
-| `drug_layer_mechanistic_target.csv` | 9 | Drug → layer → mechanism |
-| `drug_layer_clinical_goal.csv` | 11 | Drug → layer → clinical goal |
-| `drug_mechanistic_target_clinical_goal.csv` | 13 | Mechanism → clinical outcome bridge |
-| `drug_layer_mechanistic_target_clinical_goal.csv` | 13 | Full combined view |
+| `pathophysiology_asthma_mi.rq` | 29 | Union — completeness check |
+| `pathophysiology_shared_nodes_mi_asthma.rq` | 2 | Intersection — comorbidity signal |
+| `mi_drug_mechanistic_target.rq` | 4 | MI-only baseline |
+| `drug_layer_mechanistic_target.rq` | 9 | Drug → layer → mechanism |
+| `drug_layer_clinical_goal.rq` | 11 | Drug → layer → clinical goal |
+| `drug_mechanistic_target_clinical_goal.rq` | 13 | Mechanism → clinical outcome bridge |
+| `drug_layer_mechanistic_target_clinical_goal.rq` | 13 | Full combined view |
+| `upstream_cause_finder.rq` | 5 | Reverse traversal — outcome → causes |
+| `symptoms_by_disease.rq` | 3 | Disease → observable symptoms only |
+| `drug_therapeutic_leverage.rq` | 9 | Drug → downstream nodes eliminated, ranked |
 
 **Open question carried into v2:** how to represent physiologically universal nodes (shared across disease contexts) without duplicating them per-disease — see limitation note under §1. Candidate approach: model shared nodes as GraphDB-level graph structure rather than OWL individuals, deferring disease-context differentiation to the query layer.

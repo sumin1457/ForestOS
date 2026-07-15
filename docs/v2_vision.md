@@ -1,3 +1,22 @@
+### Why v2
+
+```
+Mapping eczema alongside asthma exposed a structural problem the v1
+model couldn't represent honestly. Nodes like `Th2_Activation`
+and several inflammatory processes aren't disease-specific — they're
+genuine shared physiological infrastructure, reachable from more than
+one disease's etiology chain. But OWL/Protégé only offered two options:
+duplicate the node per disease (losing the fact that it's one real
+thing) or merge it into a single instance (losing disease-specific
+context on it).
+
+Neither is correct. A node like `Th2_Activation` is one process
+that means something different depending on which cascade activates
+it — and v1 had no way to say that without either instance duplication
+or ambiguity. That's the problem v2 exists to solve.
+
+```
+
 ### Forest OS Research Contribution
 
 ```
@@ -28,5 +47,23 @@ v2 architecture:
 Side effects = drug perturbs a node appearing in multiple disease contexts
 → formally derivable from named graph structure
 → Beta-Blocker + Asthma contraindication derivable from structure alone
+
+```
+
+### Named Graph Solution to the Universal Node Problem
+
+```
+Context does NOT belong inside nodes.
+Context belongs in the GRAPH WRAPPER around triples.
+Universal_node stays universal:
+[MI_graph]    { Universal_node occursIn Cardiovascular }
+[Stroke_graph]{ Universal_node occursIn Nervous }
+Same node. Different contexts. No duplication.
+Side effects become formally derivable as cross-context perturbations
+— rather than something that has to be hand-coded per drug
+
+This is the resolution to the eczema/asthma wall above: the node
+persists once, and disease-context becomes a property of which graph
+it's queried within, not something asserted onto the node itself.
 
 ```

@@ -69,24 +69,38 @@ Not a compromise — a more faithful representation than either alone.
 
 ## Design Philosophy — UPDATED
 
-1. **Beauty precedes correctness** — structural elegance is the truth detector
+1. **Structural elegance is a diagnostic signal, not a substitute for
+   verification** — when a model feels inelegant or forced, that's
+   usually the first indication something is structurally wrong, even
+   before I can prove it logically. The eczema/asthma node-duplication
+   problem is a case in point: the awkwardness of forcing shared
+   physiology into disease-specific instances was the tell, well
+   before SPARQL confirmed the undercount.
 
 2. **Assert only ground truth** — never assert what should be inferred
 
-3. **SWRL as minimal translator** — CDM concentration → direction only. Nothing else.
+3. **Narrow the scope of rule-based reasoning** — SWRL is a minimal
+   translator (CDM concentration → direction only); SPARQL property
+   paths replace it for cascade traversal, since they're cleaner than
+   chains for cascade membership and don't require a rule re-run per
+   case
 
-4. **SPARQL replaces SWRL for traversal** — property paths are cleaner than chains for cascade membership
+4. **Context belongs in the graph, not the node** — Named Graph
+   principle
 
-5. **Context belongs in the graph, not the node** — Named Graph principle
+5. **Structure derives scores** — layer score is a SPARQL query
+   result, not a data property
 
-6. **Structure derives scores** — layer score is a SPARQL query result, not a data property
+6. **Two drug assertions per drug** — mechanistic target + clinical
+   goal. Not one or the other.
 
-7. **Two drug assertions per drug** — mechanistic target + clinical goal. Not one or the other.
+7. **Fidelity matches competency questions** — don't add nodes until
+   a query requires them
 
-8. **Fidelity matches competency questions** — don't add nodes until a query requires them
+8. **Universal nodes, contextual graphs** — the ontology encodes
+   topology, the graph layer encodes context
 
-9. **Universal nodes, contextual graphs** — the ontology encodes topology, the graph layer encodes context
-
-10. **ODE resolves what OWL cannot** — competing inputs, dynamic feedback, temporal evolution
-
+9. **ODE resolves what OWL cannot** — competing inputs, dynamic
+   feedback, temporal evolution
+   
 ---
