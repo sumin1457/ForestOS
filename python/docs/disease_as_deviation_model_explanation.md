@@ -1,19 +1,19 @@
 
-**Forest OS — Disease-as-Deviation Model**
+# **Forest OS — Disease-as-Deviation Model**
 
 Reference: forestos_disease_as_deviation_model.py
 
-This file narrates what python script `namedgraph/forestos_disease_as_deviation_model` demonstrates. 
+This file narrates what python script `python/forestos_disease_as_deviation_model.py` demonstrates. 
 
 ---
 
-**About**
+## **About**
 
 Forest OS models disease as location-specific deviation from a universal homeostatic baseline. Rather than duplicating biological nodes per disease, the system separates three distinct concerns — what the biology is, where it occurs, and what disease triggered it — assigning each to a different layer of the knowledge architecture.
 
 ---
 
-**The Layered Architecture**
+## **The Layered Architecture**
 
 The ontology is organised across four biological layers, each representing a different level of biological abstraction:
 
@@ -25,7 +25,7 @@ L1 (Infrastructure) is where deviation becomes visible at the tissue level. Bron
 
 ---
 
-**The Universal Node Problem and Its Solution**
+## **The Universal Node Problem and Its Solution**
 
 A fundamental challenge in biomedical ontology engineering is that universal biological processes — ischaemia, chronic inflammation, epithelial damage — appear across multiple diseases in different tissue contexts. Duplicating nodes per disease inflates the ABox and breaks cross-disease reasoning. Leaving them singular loses context.
 
@@ -33,7 +33,7 @@ Forest OS resolves this by placing context on the edge, not the node. Universal 
 
 ---
 
-**Named Graph Architecture**
+## **Named Graph Architecture**
 
 The system uses two levels of named graph:
 
@@ -43,7 +43,7 @@ The default graph holds the complete ontology as exported from Protégé — all
 
 ---
 
-**The Python Script**
+## **The Python Script**
 
 `forestos_disease_as_deviation_model.py` implements the graph builder in three steps, each corresponding to a biological transition:
 
@@ -57,7 +57,7 @@ Running `rebuild_all_graphs()` drops all existing context graphs and rebuilds th
 
 ---
 
-**Cross-Graph Querying**
+## **Cross-Graph Querying**
 
 The architecture enables queries that cross multiple named graphs in a single SPARQL statement. A query can enter the system through a disease context graph (retrieving the disease-specific entry point), traverse the cascade through the default graph (following universal biological edges), and terminate in a location context graph (retrieving tissue-specific symptoms or chronic consequences) — all without duplicating a single node.
 
@@ -65,6 +65,6 @@ This makes Forest OS extensible by design: each new disease mapped in Protégé 
 
 ---
 
-**Current Coverage**
+## **Current Coverage**
 
 Two diseases mapped — Myocardial Infarction and Asthma — across two location contexts (Cardiovascular, Respiratory), 23 classified edges, 0 unclassified. The architecture is validated for cross-disease querying and ready for extension to COPD, Eczema, Stroke, and further diseases sharing the existing location contexts.
