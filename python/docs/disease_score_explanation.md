@@ -1,6 +1,6 @@
 **Forest OS — Disease Score Model**
 
-Reference: `namedgraph/forestos_disease_score.py`
+Reference: `python/forestos_disease_score.py`
 
 This file narrates what the script demonstrates.
 
