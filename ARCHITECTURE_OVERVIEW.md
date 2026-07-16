@@ -46,12 +46,12 @@ Built by `namedgraph/forestos_disease_as_deviation_model.py`. Nodes are classifi
 
 Two analytical tools query the named graph structure to derive clinically meaningful classifications — without any manually asserted severity or timing data.
 
-### Clinical Timeline (`namedgraph/forestos_clinical_timeline.py`)
+### Clinical Timeline (`python/forestos_clinical_timeline.py`)
 Classifies each symptom as acute or chronic based purely on whether a `progresses_to` structural step exists between tissue damage and symptom. A single SPARQL zero-or-one path operator (`progresses_to?`) does the classification. No `hasSeverity` property needed — the structure IS the answer.
 
 **Status: working, validated against MI and Asthma. One honest anomaly found and documented (MI shows 0 acute symptoms — a real modelling granularity gap, not a bug) — see `docs/clinical_timeline_explanation.md` §6.**
 
-### Disease Stage Score (`namedgraph/forestos_disease_score.py`)
+### Disease Stage Score (`python/forestos_disease_score.py`)
 Computes a two-dimensional staging profile (cascade complexity + chronic depth) purely from graph traversal depth.
 
 **Status: exploratory, not yet validated for cross-disease comparison. Score is confounded with ABox modelling granularity — a disease mapped in more detail scores "worse" for reasons that have nothing to do with its actual severity. This is documented in detail, not hidden, in `docs/disease_score_explanation.md` §5, with three named paths to a genuine fix (§6).**
