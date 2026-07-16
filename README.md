@@ -24,6 +24,7 @@ it becomes so only when dysregulated. See
 [`docs/v2_vision.md`](docs/v2_vision.md) for the full architecture 
 this implies.
 
+---
 
 ## Conceptual Framework
 
@@ -67,6 +68,7 @@ targeting specific cascade nodes
 **Clinical Manifestation** — observable outputs (symptoms, 
 biomarkers) produced by disrupted cascades
 
+---
 
 ## Design Philosophy
 
@@ -78,6 +80,8 @@ represent health and disease within a single unified framework.
 
 Full architectural reasoning and design decisions: 
 [`docs/key_findings.md`](docs/key_findings.md)
+
+---
 
 ## Example Query
 
@@ -100,6 +104,8 @@ Full result set: [`sparql/results/drug_mechanistic_target_clinical_goal.csv`](sp
 
 SPARQL Query Full Description: [`sparql/RESULTS.md`](sparql/RESULTS.md)
 
+---
+
 ## Architecture
 
 Four-layer biomedical model:
@@ -115,6 +121,8 @@ Orthogonal descriptive axes:
 
 Full class hierarchy, object properties, SWRL rules, and complete 
 ABox instance sets: [`docs/architecture.md`](docs/architecture.md)
+
+---
 
 ## Research-style framing 
 
@@ -133,17 +141,26 @@ ABox instance sets: [`docs/architecture.md`](docs/architecture.md)
    mechanistic target), not a manually asserted value
 
 4. **Faceted L1 infrastructure** — orthogonal organ system × 
-   structural substrate axes with intersection classes 
+   structural substrate axes with intersection classes
+
+---
 
 ## Documentation
 
+Start here: [`ARCHITECTURE_OVERVIEW.md`](ARCHITECTURE_OVERVIEW.md) — map of the whole project.
+
 | File | Contents |
 |---|---|
-| [`docs/architecture.md`](docs/architecture.md) | Full TBox, RBox, SWRL rules, and ABox instance sets |
-| [`docs/key_findings.md`](docs/key_findings.md) | Architectural decisions and reasoning, design philosophy |
-| [`docs/known_limitation.md`](docs/known_limitation.md) | Open modeling tensions and planned resolutions — e.g. why cross-disease shared-node detection currently undercounts real physiological overlap |
-| [`docs/v2_vision.md`](docs/v2_vision.md) | Homeostasis-as-primary architecture and Named Graph disease-context isolation |
-| [`sparql/RESULTS.md`](sparql/RESULTS.md) | Narrated walkthrough of the SPARQL query library and results |  
+| [`docs/architecture.md`](docs/architecture.md) | Full TBox, RBox, SWRL rules, ABox instance sets |
+| [`docs/key_findings.md`](docs/key_findings.md) | Architectural decisions and reasoning |
+| [`docs/known_limitation.md`](docs/known_limitation.md) | Open modeling tensions and resolutions |
+| [`docs/v2_vision.md`](docs/v2_vision.md) | Homeostasis-as-primary, Named Graph vision |
+| [`docs/disease_as_deviation_model_explanation.md`](docs/disease_as_deviation_model_explanation.md) | Named Graph implementation |
+| [`docs/clinical_timeline_explanation.md`](docs/clinical_timeline_explanation.md) | Structural acute/chronic classification |
+| [`docs/disease_score_explanation.md`](docs/disease_score_explanation.md) | Disease staging (exploratory, limitations documented) |
+| [`sparql/RESULTS.md`](sparql/RESULTS.md) | SPARQL query library walkthrough |
+
+---
 
 ## SPARQL Queries
 
@@ -155,6 +172,8 @@ limitation around cross-disease shared nodes (currently only 2
 detected between MI and Asthma — see RESULTS.md for why, and the 
 planned GraphDB-level fix).
 
+---
+
 ## Tools
 
 - Protégé 5.6.9 (OWL 2.0.0)
@@ -163,7 +182,7 @@ planned GraphDB-level fix).
 - Python: Graph traversal and validation, replacing SWRL (+ODE)
 
 **Note:** SWRL rules and the Pellet/SQWRL query pipeline used in 
-early development have been removed. Only hasResponsePattern SWRL remians. 
+early development have been removed. Only hasResponsePattern SWRL remains. 
 Cross-cascade reasoning (e.g. multi-hop `increases`/`inhibits`/`leads_to` traversal) is 
 now handled via SPARQL property paths against GraphDB rather than 
 custom SWRL rules — this scales more cleanly across diseases and 
@@ -183,6 +202,8 @@ is directly queryable rather than requiring a rule re-run per case.
 4. Create a repository and import `forest_os_ontology_v1.rdf`
 5. Open the SPARQL editor and run queries from [`sparql/`](sparql/), or paste them in directly
 
+---
+
 ## Status
 
 **Phase 1 complete:** Asthma cascade + MI cascade mapped, 
@@ -193,12 +214,14 @@ Python + GraphDB reasoning); object properties cleaned for
 disease co-occurrence; `perturbs_mechanistically` / 
 `perturbs_functionally` asserted across all mapped drugs
 
-**Phase 2 active:** Named Graph solving universial nodes problem;
-Reification of cascade edges (CascadeEdge 
-individuals carrying rate constants) feeding a Python ODE simulation 
-layer; SNOMED-CT alignment
+**Phase 2 complete:** Named Graph solving universial nodes problem;
 
-Reference tag: [`v1.0-mi-complete`](../../releases/tag/v1.0-mi-complete)
+**Phase 3 active:** Mapping diseases for stress test; SNOMED-CT alignment
+;Reification of cascade edges (CascadeEdge 
+individuals carrying rate constants) feeding a Python ODE simulation 
+layer
+
+Reference tag: [`v1.2-named-graphs`](../../releases/tag/v1.2-named-graphs)
 
 ## Background
 
