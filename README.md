@@ -1,5 +1,7 @@
 # Forest OS 
 
+📍 **[Start here: Architecture Overview](ARCHITECTURE_OVERVIEW.md)** — a map of the project before diving into any individual doc.
+
 A pharmacological reasoning ontology encoding 
 context-specific bidirectional mediator cascades
 with therapeutic effect inference.
