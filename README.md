@@ -96,9 +96,9 @@ clinical goal does that produce?"
 | Corticosteroid | MastCell            | Chronic_Inflammation_asthma  |
 | Beta_Blocker   | SNS_Activation      | Ischaemia_endocardium        |
 
-Full result set: [`SPARQL/results/drug_mechanistic_target_clinical_goal.csv`](SPARQL/results/drug_mechanistic_target_clinical_goal.csv)
+Full result set: [`sparql/results/drug_mechanistic_target_clinical_goal.csv`](sparql/results/drug_mechanistic_target_clinical_goal.csv)
 
-SPARQL Query Full Description: [`SPARQL/RESULTS.md`](SPARQL/RESULTS.md)
+SPARQL Query Full Description: [`sparql/RESULTS.md`](sparql/RESULTS.md)
 
 ## Architecture
 
@@ -143,13 +143,13 @@ ABox instance sets: [`docs/architecture.md`](docs/architecture.md)
 | [`docs/key_findings.md`](docs/key_findings.md) | Architectural decisions and reasoning, design philosophy |
 | [`docs/known_limitation.md`](docs/known_limitation.md) | Open modeling tensions and planned resolutions — e.g. why cross-disease shared-node detection currently undercounts real physiological overlap |
 | [`docs/v2_vision.md`](docs/v2_vision.md) | Homeostasis-as-primary architecture and Named Graph disease-context isolation |
-| [`SPARQL/RESULTS.md`](SPARQL/RESULTS.md) | Narrated walkthrough of the SPARQL query library and results |  
+| [`sparql/RESULTS.md`](sparql/RESULTS.md) | Narrated walkthrough of the SPARQL query library and results |  
 
 ## SPARQL Queries
 
-Query library lives in [`SPARQL/`](SPARQL/) — each `.rq` file has a 
-matching `.csv` result in `SPARQL/results/`. See 
-[`SPARQL/RESULTS.md`](SPARQL/RESULTS.md) for a narrated walkthrough 
+Query library lives in [`sparql/`](sparql/) — each `.rq` file has a 
+matching `.csv` result in `sparql/results/`. See 
+[`sparql/RESULTS.md`](sparql/RESULTS.md) for a narrated walkthrough 
 of what each query demonstrates, including a known modeling 
 limitation around cross-disease shared nodes (currently only 2 
 detected between MI and Asthma — see RESULTS.md for why, and the 
@@ -181,7 +181,7 @@ is directly queryable rather than requiring a rule re-run per case.
 2. Open `ontology/forest_os_ontology_v1.rdf` in Protégé to browse classes/properties
 3. Install [GraphDB](https://graphdb.ontotext.com/) (free version) — for querying
 4. Create a repository and import `forest_os_ontology_v1.rdf`
-5. Open the SPARQL editor and run queries from [`SPARQL/`](SPARQL/), or paste them in directly
+5. Open the SPARQL editor and run queries from [`sparql/`](sparql/), or paste them in directly
 
 ## Status
 

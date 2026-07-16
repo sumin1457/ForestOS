@@ -2,7 +2,7 @@
 
 Reference: `v1.0-mi-complete` tag (MI + Asthma mapped, SWRL removed, mechanistic/functional drug properties asserted)
 
-This file narrates what each query in `SPARQL/results/` demonstrates. Raw CSV output for each query sits alongside the corresponding `.rq` file for anyone who wants to verify or re-run against `forestos-ontology.rdf` directly.
+This file narrates what each query in `sparql/results/` demonstrates. Raw CSV output for each query sits alongside the corresponding `.rq` file for anyone who wants to verify or re-run against `forestos-ontology.rdf` directly.
 
 ---
 
