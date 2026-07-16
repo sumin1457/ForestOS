@@ -1,4 +1,4 @@
-**Forest OS — Disease Score Model**
+# **Forest OS — Disease Score Model**
 
 Reference: `python/forestos_disease_score.py`
 
@@ -21,7 +21,7 @@ Queries GraphDB across two graph layers — the default graph (full ontology) an
 Counts intermediate cascade nodes traversed from the disease entry point (`has_etiology` / `triggers`) to each L1 infrastructure node, via the cascade property chain (`increases`, `inhibits`, `targets`, `modulates`). The L1 node must appear in the relevant location context graph, confirming tissue membership.
 
 ```sparql
-:{disease} (:has_etiology|:triggers) ?entry .
+:{disease} (:has_etiology|:triggers)+ ?entry .
 ?entry (:increases|:inhibits|:targets|:modulates)+ ?step .
 ?step  (:increases|:inhibits|:targets|:modulates)* ?l1node .
 ?l1class rdfs:subClassOf* :L1_Infrastructure .
