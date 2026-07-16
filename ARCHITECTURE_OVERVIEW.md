@@ -62,11 +62,12 @@ Computes a two-dimensional staging profile (cascade complexity + chronic depth) 
 
 ```
 1. This file           — the map
-2. known_limitation.md — what problems exist / are resolved
-3. disease_as_deviation_model_explanation.md  — how Named Graphs work
-4. clinical_timeline_explanation.md           — first thing built on it
-5. disease_score_explanation.md               — second thing, and its open problem
-6. RESULTS.md           — the SPARQL query library this all sits on top of
+2. README.md           - Overview of ontology
+3. known_limitation.md — what problems exist / are resolved
+4. disease_as_deviation_model_explanation.md  — how Named Graphs work
+5. clinical_timeline_explanation.md           — first thing built on it
+6. disease_score_explanation.md               — second thing, and its open problem
+7. RESULTS.md           — the SPARQL query library this all sits on top of
 ```
 
 ---
