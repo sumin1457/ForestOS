@@ -39,18 +39,21 @@ Asthma (context/Respiratory):
         Bronchoconstriction  →  Wheeze
         Epithelial_Damage    →  Cough
 
-    Chronic (3):
+    Chronic (5):
         Bronchoconstriction  →  Airway_Remodelling       →  Shortness_of_Breath
         Bronchoconstriction  →  Airway_Remodelling       →  Wheeze
         Epithelial_Damage    →  Chronic_Inflammation     →  Chest_Pain
+        Chronic_Inflammation    →  Airway_Remodelling    →  Shortness_of_Breath
+        Chronic_Inflammation    →  Airway_Remodelling    →  Wheeze
 
 MI (context/Cardiovascular):
     Acute (0):
         none
 
-    Chronic (2):
+    Chronic (3):
         BloodClot  →  Ischaemia  →  Shortness_of_Breath
         BloodClot  →  Ischaemia  →  Chest_Pain
+        Ischaemia  →  Necrosis  →  Fatigue
 
 ```
 
