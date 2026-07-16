@@ -36,7 +36,7 @@ The node stays singular in the default graph.
 The named graph says where its effect applies.
 ```
 
-Built by `namedgraph/forestos_disease_as_deviation_model.py`. Nodes are classified into a location context two ways: Type A nodes already have a location class in the TBox (e.g. `Bronchoconstriction SubClassOf Respiratory_System`); Type B universal nodes (e.g. `Ischaemia`) get a minimal `occursIn` assertion per instance. Full reasoning: `docs/disease_as_deviation_model_explanation.md`.
+Built by `python/forestos_disease_as_deviation_model.py`. Nodes are classified into a location context two ways: Type A nodes already have a location class in the TBox (e.g. `Bronchoconstriction SubClassOf Respiratory_System`); Type B universal nodes (e.g. `Ischaemia`) get a minimal `occursIn` assertion per instance. Full reasoning: `docs/disease_as_deviation_model_explanation.md`.
 
 **Status: proven at 2 diseases, 2 contexts, 0 unclassified edges. About to be stress-tested at 4-5 diseases (COPD, Stroke).**
 
