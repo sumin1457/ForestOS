@@ -1,9 +1,10 @@
 
-**Forest OS Query Scripts — Clinical Timeline**
+# **Forest OS Query Scripts — Clinical Timeline**
 
-Reference: forestos-clinical-timeline.py 
+Reference: forestos_clinical_timeline.py 
 
-This file narrates what python script `namedgraph/forestos_clinical_timeline` demonstrates. 
+This file narrates what python script `python/forestos_clinical_timeline.py` demonstrates.
+
 ---
 
 ## 1. Purpose
