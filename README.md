@@ -216,8 +216,9 @@ disease co-occurrence; `perturbs_mechanistically` /
 
 **Phase 2 complete:** Named Graph solving universial nodes problem;
 
-**Phase 3 active:** Mapping diseases for stress test; SNOMED-CT alignment
-;Reification of cascade edges (CascadeEdge 
+**Phase 3 active:** Mapping diseases for stress test; SNOMED-CT Foundation
+course complete - next: aligning L1-L4 class hierarchy against SNOMED's clinical
+terminology structure; Reification of cascade edges (CascadeEdge 
 individuals carrying rate constants) feeding a Python ODE simulation 
 layer
 
@@ -227,4 +228,4 @@ Reference tag: [`v1.2-named-graphs`](../../releases/tag/v1.2-named-graphs)
 
 Built by a 3rd year MPharm student (2026/27) at the University 
 of Manchester exploring biomedical knowledge architecture.
-Pursuing SNOMED-CT certification.
+SNOMED-CT Foundation Course completed (July 2026).
