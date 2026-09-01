@@ -67,7 +67,7 @@ four layers:
 Drug intervention depth is computed from layer of action. A drug acting at
 L3 suppresses more downstream nodes and is structurally closer to the
 disease root than one acting at L1 — this is computed directly by
-[`sparql/drug_layer_depth.sparql`](sparql/README.md#drug_layer_depth.sparql),
+[`sparql/drug_layer_depth.rq`](sparql/drug_layer_depth.rq),
 not asserted by hand.
 
 ---
@@ -178,32 +178,37 @@ comparison.
 
 ---
 
-## Pharmacological Taxonomy
+## Pharmacological Property Hierarchy
 
-Drugs are classified by how they relate to the healthy baseline:
+Drug action is modelled at two levels: mechanism (what happens at the
+target) and intent (why it's being done, clinically).
 
-```
-Type 1 — Homeostatic mimicry
-  Drug mimics the body's own molecule.
-  Corticosteroid → mimics cortisol (endogenous anti-inflammatory)
-  Nitrate → donates NO (endogenous platelet inhibitor)
-  Closest to root. Widest cascade suppression.
+perturbs_mechanistically      — the physical/molecular action on a target
+├── agonises_receptor          — binds and activates a receptor
+├── antagonises_receptor       — binds and blocks a receptor
+├── downregulates               — reduces expression/activity of a target
+└── upregulates                 — increases expression/activity of a target
 
-Type 2 — Physiological hijacking
-  Drug exploits existing machinery unrelated to disease cause.
-  LABA → uses SNS bronchodilation pathway
-  SNS has no role in why asthma develops.
-  Addresses downstream output, not upstream cause.
+therapeutic_intent             — the clinical direction of that action
+├── therapeutic_activation      — intent is to increase a pathway/output
+└── therapeutic_suppression     — intent is to decrease a pathway/output
 
-Type 3 — Enzymatic blockade
-  Drug blocks rate-limiting enzyme in pathological substrate.
-  Statin → HMGCoA reductase (cholesterol synthesis)
-  Aspirin → COX inhibition (arachidonic acid cascade)
-```
+Why both are needed separately: mechanism and intent don't always point
+the same way. Antagonising a receptor is a suppressive mechanism, and
+usually a suppressive intent too — but a drug could mechanistically
+antagonise an inhibitory receptor in order to achieve a net activating
+therapeutic intent downstream. Keeping the two properties independent lets
+the ontology represent that gap instead of collapsing it into one label.
 
-Side effects follow structurally: LABA causes tachycardia because SNS
-bronchodilation and cardiac rate share machinery. The adverse effect is
-derivable from the mechanism — not asserted manually.
+Relation to the Type 1/2/3 taxonomy: perturbs_mechanistically is the
+predicate drug_layer_depth.sparql and drug_cascade_resolution.sparql
+already traverse (?drug :perturbs_mechanistically ?target). Type 1/2/3
+is a higher-level read of pattern across mechanism + layer + intent —
+e.g. Type 1 (homeostatic mimicry) tends to pair agonises_receptor +
+therapeutic_activation at a node the body itself would activate; Type 3
+(enzymatic blockade) tends to pair downregulates/antagonises_receptor
+
+therapeutic_suppression at a substrate-limiting enzyme.
 
 ---
 
