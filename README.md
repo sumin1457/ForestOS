@@ -61,6 +61,11 @@ four layers:
 | L3 — Immune | Th2, IgE signalling, dendritic cell activity | Regulatory immune machinery |
 | L2 — Biochemical | Histamine, prostaglandins, cAMP, NO, PGI2 | Molecular mediators |
 | L1 — Infrastructure | Bronchoconstriction, ischaemia, atherosclerosis | Tissue-level consequence |
+
+
+Extra Layer:
+| Layer | Domain | Role |
+|---|---|---|
 | L1.5 — Enzyme | ACE, COX, HMG-CoA | Protein-level |
 | L1.5 — Receptor | AT1, H1, LDL, Muscarinic | Reacts to molecular signal |
 
@@ -183,6 +188,7 @@ comparison.
 Drug action is modelled at two levels: mechanism (what happens at the
 target) and intent (why it's being done, clinically).
 
+```
 perturbs_mechanistically      — the physical/molecular action on a target
 ├── agonises_receptor          — binds and activates a receptor
 ├── antagonises_receptor       — binds and blocks a receptor
@@ -192,6 +198,7 @@ perturbs_mechanistically      — the physical/molecular action on a target
 therapeutic_intent             — the clinical direction of that action
 ├── therapeutic_activation      — intent is to increase a pathway/output
 └── therapeutic_suppression     — intent is to decrease a pathway/output
+```
 
 Why both are needed separately: mechanism and intent don't always point
 the same way. Antagonising a receptor is a suppressive mechanism, and
@@ -199,16 +206,6 @@ usually a suppressive intent too — but a drug could mechanistically
 antagonise an inhibitory receptor in order to achieve a net activating
 therapeutic intent downstream. Keeping the two properties independent lets
 the ontology represent that gap instead of collapsing it into one label.
-
-Relation to the Type 1/2/3 taxonomy: perturbs_mechanistically is the
-predicate drug_layer_depth.sparql and drug_cascade_resolution.sparql
-already traverse (?drug :perturbs_mechanistically ?target). Type 1/2/3
-is a higher-level read of pattern across mechanism + layer + intent —
-e.g. Type 1 (homeostatic mimicry) tends to pair agonises_receptor +
-therapeutic_activation at a node the body itself would activate; Type 3
-(enzymatic blockade) tends to pair downregulates/antagonises_receptor
-
-therapeutic_suppression at a substrate-limiting enzyme.
 
 ---
 
