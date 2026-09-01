@@ -226,6 +226,10 @@ Forest OS/
 │   ├── known_limitations.md
 │   └── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
 └── diagrams/
+│   ├── hypercholesterolaemia_state0_homeostatic.png
+│   ├── hypercholesterolaemia_state1_physiological.png
+│   ├── hypercholesterolaemia_state2_pathological.png
+│   └── hypercholesterolaemia_state3_pharmacological.png
 ```
 
 **Stack:** Protégé · OWL 2 DL · SWRL · SPARQL 1.1 · GraphDB · Python 3
