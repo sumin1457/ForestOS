@@ -23,6 +23,20 @@ by drug/target/layer, counted, ordered by eliminated nodes descending.
 
 **Result shape:** `drug | target | layer | eliminatedNodes`
 
+| Drug | Target | Layer | Eliminated Nodes |
+|---|---|---|---|
+| ACEi | ACE | 1.5 | 10 |
+| Corticosteroid | Th2 | 3 | 9 |
+| Omalizumab | IgE_Signalling | 3 | 6 |
+| Corticosteroid | MastCell | 3 | 5 |
+| Aspirin | COX1_Platelet | 1.5 | 3 |
+| Statin | HMGCR_pharmacological | 1.5 | 3 |
+| Bisoprolol | Beta1_Receptor_Cardiovascular | 1.5 | 2 |
+| Propanolol | Beta1_Receptor_Cardiovascular | 1.5 | 2 |
+| Propanolol | Beta2_Receptor_Respiratory | 1.5 | 2 |
+| SABA | Beta2_Receptor_Respiratory | 1.5 | 2 |
+| LTRA | Leukotriene_asthma | 2 | 2 |
+
 ---
 
 ## drug_resolution_chain.rq
@@ -39,6 +53,14 @@ at an isolated node.
 `resolves_to`+ → secondaryEffect.
 
 **Result shape:** `drugEffect | secondaryEffect`
+
+| Drug Effect | Secondary Effect |
+|---|---|
+| Cholesterol_ER_pharmacological | Oxysterol_Low |
+| Cholesterol_ER_pharmacological | Cholesterol_ER_pharmacological |
+| Cholesterol_ER_pharmacological | LDL_pharmacological |
+
+**NOTES**: Second row (repeated cholesterol) shows a positive feedback. 
 
 ---
 
@@ -59,6 +81,15 @@ with `hasSystemState "Pharmacological"`.
 **Result shape:** `probNode | class | resolvingNode | clearState`
 (`clearState` is `"Resolved"` or `"Unresolved"`)
 
+| Problem Node | Class | Resolving Node | Clear State |
+|---|---|---|---|
+| SFA_pathological | Saturated_Fatty_Acid | | Unresolved |
+| ROS_Oxysterol | Reactive_Oxygen_Species | | Unresolved |
+| Oxysterol_Deviated | Oxysterol | Oxysterol_Low | Pharmacologically Resolved |
+| LDL_Deviated | LDL | LDL_pharmacological | Pharmacologically Resolved |
+| LX_Receptor_pathological | Liver_X_Receptor | | Unresolved |
+| VLDL_Deviated | VLDL | | Unresolved |
+
 ---
 
 ## physiological_self_resolution.rq
@@ -76,6 +107,14 @@ resolveEffect → (state-change predicates)+ → mid2 → `balances_to` →
 secondaryEffect. Filtered to nodes with `hasSystemState "Physiological"`.
 
 **Result shape:** `physioEffect | resolveEffect | secondaryEffect`
+
+| Physio Effect | Resolve Effect | Secondary Effect |
+|---|---|---|
+| VLDL_SFA | | |
+| Cholesterol_ER_physiological | | |
+| LDL_SFA | | |
+| Oxysterol_High | | |
+| LX_Receptor_physiological | SFA_Low | LDL_Low |
 
 ---
 
@@ -96,6 +135,13 @@ instance has an outgoing `balances_to` edge.
 
 **Result shape:** `physiomid | clearPoint | pathomid`
 (`clearPoint` = `"Clear"` if the physiological instance resolves)
+
+| Physio Mid | Clear Point | Patho Mid |
+|---|---|---|
+| VLDL_SFA | | VLDL_Deviated |
+| LDL_SFA | | LDL_Deviated |
+| Oxysterol_High | | Oxysterol_Deviated |
+| LX_Receptor_physiological | Clear | LX_Receptor_pathological |
 
 ---
 
