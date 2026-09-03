@@ -1,9 +1,0 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX : <http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#>
-
-SELECT DISTINCT (REPLACE(STRAFTER(STR(?drug), "#"), "_instance", "") AS ?drugName) (REPLACE(STRAFTER(STR(?mech), "#"), "_instance", "") AS ?mechanisticTarget) (REPLACE(STRAFTER(STR(?func), "#"), "_instance", "") AS ?clinicalGoal) WHERE {
-    ?drug rdf:type :Drug_Intervention .
-    ?drug :perturbs_mechanistically ?mech .
-    ?drug :perturbs_functionally ?func
-}
-    ORDER BY ?drugName
