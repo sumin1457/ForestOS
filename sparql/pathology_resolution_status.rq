@@ -27,4 +27,4 @@ SELECT DISTINCT ?probNode ?class ?resolvingNode ?clearState WHERE {
     BIND(IF(BOUND(?resolvingNode),"Pharmacologically Resolved","Unresolved")AS ?clearState)
         }
      
-}
+
