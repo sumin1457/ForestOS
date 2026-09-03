@@ -89,6 +89,29 @@ Full query definitions and result tables: [`sparql/README.md`](../sparql/README.
 
 ---
 
+## Major Findings 
+
+### 1 — The physio/patho divergence is queryable, not just diagrammed
+
+`physio_vs_patho_divergence.sparql` confirms, in the asserted graph, that
+the *same node class* (`LX_Receptor`) resolves when reached via its
+Physiological-state instance (`balances_to` present) but does not resolve
+via its Pathological-state instance (`balances_to` absent). This is a
+formal argument for why State 2 counts as pathological rather than a
+labelling choice: the resolution machinery demonstrably exists — State 1
+proves it — it's just unreachable from the State 2 entry point.
+
+### 2 — Unresolved nodes expose real gaps in drug coverage
+
+`pathological_unresolved_nodes.sparql` shows `Saturated_Fatty_Acid`,
+`Reactive_Oxygen_Species`, and `Liver_X_Receptor` returning `"Unresolved"`
+— no downstream node in Pharmacological state. Statin resolves `Oxysterol`
+and `LDL`, but never touches the SFA/ROS root. This is the queryable
+version of the case study's own claim: *the drug closes the LDL loop; the
+root cause remains open.*
+
+---
+
 ## Reference Case: Myocardial Infarction
 
 MI was the first disease mapped and remains useful as a comparison case —
