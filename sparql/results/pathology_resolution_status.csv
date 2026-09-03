@@ -1,0 +1,7 @@
+﻿probNode,class,resolvingNode,clearState
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SFA_pathological_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Saturated_Fatty_Acid,,Unresolved
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ROS_Oxysterol_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Reactive_Oxygen_Species,,Unresolved
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oxysterol_Deviated_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oxysterol,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oxysterol_Low_instance,Pharmacologically Resolved
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDL_Deviated_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDL,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDL_pharmacological_instance,Pharmacologically Resolved
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LX_Receptor_pathological_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Liver_X_Receptor,,Unresolved
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#VLDL_Deviated_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#VLDL,,Unresolved

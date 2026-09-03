@@ -1,0 +1,6 @@
+﻿physioEffect,resolveEffect,secondaryEffect
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#VLDL_SFA_instance,,
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Cholesterol_ER_physiological_instance,,
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDL_SFA_instance,,
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oxysterol_High_instance,,
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LX_Receptor_physiological_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SFA_Low_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDL_Low_instance

@@ -1,0 +1,5 @@
+﻿physiomid,clearPoint,pathomid
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#VLDL_SFA_instance,,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#VLDL_Deviated_instance
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDL_SFA_instance,,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LDL_Deviated_instance
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oxysterol_High_instance,,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Oxysterol_Deviated_instance
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LX_Receptor_physiological_instance,Clear,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LX_Receptor_pathological_instance

@@ -1,0 +1,12 @@
+﻿drug,target,layer,eliminatedNodes
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ACEi_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#ACE_instance,1.5,10
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Corticosteroid_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Th2_instance,3,9
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Omalizumab_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#IgE_Signalling_instance,3,6
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Corticosteroid_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#MastCell_instance,3,5
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Aspirin_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#COX1_Platelet_instance,1.5,3
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Statin_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#HMGCR_pharmacological_instance,1.5,3
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Bisoprolol_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta1_Receptor_Cardiovascular_instance,1.5,2
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Propanolol_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta1_Receptor_Cardiovascular_instance,1.5,2
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Propanolol_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta2_Receptor_Respiratory_instance,1.5,2
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#SABA_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Beta2_Receptor_Respiratory_instance,1.5,2
+http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#LTRA_instance,http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#Leukotriene_asthma_instance,2,2
