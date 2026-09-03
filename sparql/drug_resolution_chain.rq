@@ -7,4 +7,4 @@ SELECT DISTINCT ?drugEffect ?secondaryEffect WHERE{
     ?drugEffect (:System_Event_Logic|:Genetic_Logic|:switches_off|:switches_on)* ?mid .
     ?mid :resolves_to+ ?secondaryEffect .
     
-}}
+}
