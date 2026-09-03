@@ -18,6 +18,8 @@ in specific ways, at specific nodes — that drugs then target.
 Full walkthrough of the state model, with a worked case study
 (Hypercholesterolaemia), lives in [`docs/state_model.md`](docs/state_model.md).
 
+Full architecture explanation lives in [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md).
+
 ---
 
 ## Conceptual Framework
@@ -223,7 +225,7 @@ Forest OS/
 ├── sparql/                             ← see sparql/README.md for full index
 ├── docs/
 │   ├── state_model.md                  ← 4-state walkthrough + case studies
-│   ├── key_architectural_decision.md.  ← object Property/universial nodes design decision
+│   ├── key_architectural_decision.md   ← object Property/universial nodes design decision
 │   ├── known_limitations.md
 │   ├── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
 │   └── archive                         ← v1 archive
