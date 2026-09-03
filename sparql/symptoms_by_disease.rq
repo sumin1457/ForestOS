@@ -2,6 +2,6 @@ PREFIX : <http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3
 
 SELECT DISTINCT (REPLACE(STRAFTER(STR(?symptoms), "#"), "_instance", "") AS ?symptoms_List) WHERE {
     :MI_instance (:has_etiology|:has_pathophysiology) ?entry .
-    ?entry (:increases|:inhibits|:modulates|:promotes|:targets|:progresses_to)* ?nodes .
+    ?entry (:System_Event_Logic|:progresses_to)* ?nodes .
     ?nodes :leads_to ?symptoms
 }
