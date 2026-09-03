@@ -255,6 +255,30 @@ Forest OS/
 
 ---
 
+## How to Read
+
+### View the ontology
+1. Download `ontology/forestos_ontology_v2.rdf`.
+2. Open it in Protégé.
+
+### Query via SPARQL
+1. In GraphDB, create a new repository (any name).
+2. Import `ontology/forestos_inferred_v2.rdf` into it.
+3. Open each `.rq` file in `sparql/` and run it in GraphDB's SPARQL editor
+   — one query at a time. See `sparql/README.md` for what each query
+   answers before running.
+
+### Run the state graph builder (Python)
+1. Complete the SPARQL setup above (repository created, inferred RDF
+   imported).
+2. In `forestos_state_model_v2.py`, set `QUERY_ENDPOINT` and
+   `UPDATE_ENDPOINT` to match your repository's URL.
+3. `pip install requests`
+4. Run the script. It rebuilds the four state named graphs from the
+   default graph.
+
+---
+
 ## Roadmap
 
 ```
