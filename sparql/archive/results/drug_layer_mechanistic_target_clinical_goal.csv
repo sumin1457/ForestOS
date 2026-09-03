@@ -1,0 +1,14 @@
+﻿drugName,layer,mechanisticTarget,clinicalGoal
+Corticosteroid,3,MastCell,Airway_Remodelling_asthma
+Corticosteroid,3,MastCell,Chronic_Inflammation_asthma
+Corticosteroid,3,Th2,Airway_Remodelling_asthma
+Corticosteroid,3,Th2,Chronic_Inflammation_asthma
+Omalizumab,3,IgE_Signalling,Bronchoconstriction
+Omalizumab,3,IgE_Signalling,MastCell
+ACEi,2,RAAS_Activation,Ischaemia_endocardium
+Antiplatelet,2,TXA2,Blood_Clot_mi
+Beta_Blocker,2,SNS_Activation,Ischaemia_endocardium
+LTRA,2,Leukotriene_asthma,Bronchoconstriction
+LTRA,2,Leukotriene_asthma,Chronic_Inflammation_asthma
+SABA_LABA,2,cAMP_ASM,Bronchoconstriction
+Statin,2,Hypercholesterolaemia,Atherosclerosis

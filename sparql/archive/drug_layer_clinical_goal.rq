@@ -1,0 +1,18 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT Distinct (Replace(STRAFTER(STR(?drug), "#"), "_instance", "") AS ?name) ?Therapeutic_layer (Replace(STRAFTER(STR(?target), "#"), "_instance", "") AS ?targetName) WHERE {
+                ?drug rdf:type :Drug_Intervention .
+                ?drug :therapeutic_intent ?target .
+                ?target rdf:type ?targetClass .
+                ?targetClass rdfs:subClassOf* ?layerClass .
+                VALUES (?layerClass ?Therapeutic_layer) {
+                (:L1_Infrastructure 1)
+                (:L2_Hormone_and_biochemical_signalling 2)
+                (:L3_Immune 3)
+                (:L4_Genetic 4)
+                (:Enzyme_Level 1.5)
+                (:Receptor_Level 1.5)
+}
+}
+                ORDER BY DESC(?layer)
