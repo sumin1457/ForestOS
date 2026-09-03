@@ -231,7 +231,7 @@ Forest OS/
 │   ├── hypercholesterolaemia_state0_homeostatic.png
 │   ├── hypercholesterolaemia_state1_physiological.png
 │   ├── hypercholesterolaemia_state2_pathological.png
-│   └── hypercholesterolaemia_state3_pharmacological.png
+└── └── hypercholesterolaemia_state3_pharmacological.png
 ```
 
 **Stack:** Protégé · OWL 2 DL · SWRL · SPARQL 1.1 · GraphDB · Python 3
