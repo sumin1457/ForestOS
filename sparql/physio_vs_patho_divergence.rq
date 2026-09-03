@@ -1,45 +1,38 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2759
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#>
 
-\f0\fs24 \cf0 PREFIX owl: <http://www.w3.org/2002/07/owl#>\
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
-PREFIX : <http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#>\
-\
-SELECT DISTINCT ?physiomid ?clearPoint ?pathomid WHERE\{\
-    ?physioNode a :Saturated_Fatty_Acid ; :hasSystemState "Physiological".\
-    ?physioNode (:System_Event_Logic|:Genetic_Logic|:switches_on|:switches_off)+ ?physiomid .\
-    FILTER EXISTS \{?physiomid :hasSystemState "Physiological"\}\
-    \
-    ?physiomid rdf:type ?physioClass .\
-    FILTER NOT EXISTS \{\
-        ?physiomid rdf:type ?physiosubClass .\
-        ?physiosubClass rdfs:subClassOf ?physioClass .\
-        FILTER(?physiosubClass != ?physioClass)\
-    \}\
-   \
-    ?pathoNode a :Saturated_Fatty_Acid ; :hasSystemState "Pathological".\
-    ?pathoNode (:System_Event_Logic|:Genetic_Logic|:switches_on|:switches_off|:deviates_into)+ ?pathomid .\
-    FILTER EXISTS \{?pathomid :hasSystemState "Pathological"\}\
-    \
-    ?pathomid rdf:type ?pathoClass\
-    FILTER NOT EXISTS \{\
-        ?pathomid rdf:type ?pathosubClass .\
-        ?pathosubClass rdfs:subClassOf ?pathoClass .\
-        FILTER(?pathosubClass != ?pathoClass)\
-    \}\
-    \
-    FILTER(?pathoClass = ?physioClass)\
-    FILTER(?physioClass != owl:NamedIndividual)\
-    FILTER(?pathoClass != owl:NamedIndividual)\
-    \
-    OPTIONAL\{\
-        ?physiomid :balances_to ?anyNode .\
-        BIND(IF(BOUND(?anyNode),"Clear","")AS ?clearPoint)\
-    \}\
-    \
-\}}
+SELECT DISTINCT ?physiomid ?clearPoint ?pathomid WHERE{
+    ?physioNode a :Saturated_Fatty_Acid ; :hasSystemState "Physiological".
+    ?physioNode (:System_Event_Logic|:Genetic_Logic|:switches_on|:switches_off)+ ?physiomid .
+    FILTER EXISTS {?physiomid :hasSystemState "Physiological"}
+    
+    ?physiomid rdf:type ?physioClass .
+    FILTER NOT EXISTS {
+        ?physiomid rdf:type ?physiosubClass .
+        ?physiosubClass rdfs:subClassOf ?physioClass .
+        FILTER(?physiosubClass != ?physioClass)
+    }
+   
+    ?pathoNode a :Saturated_Fatty_Acid ; :hasSystemState "Pathological".
+    ?pathoNode (:System_Event_Logic|:Genetic_Logic|:switches_on|:switches_off|:deviates_into)+ ?pathomid .
+    FILTER EXISTS {?pathomid :hasSystemState "Pathological"}
+    
+    ?pathomid rdf:type ?pathoClass
+    FILTER NOT EXISTS {
+        ?pathomid rdf:type ?pathosubClass .
+        ?pathosubClass rdfs:subClassOf ?pathoClass .
+        FILTER(?pathosubClass != ?pathoClass)
+    }
+    
+    FILTER(?pathoClass = ?physioClass)
+    FILTER(?physioClass != owl:NamedIndividual)
+    FILTER(?pathoClass != owl:NamedIndividual)
+    
+    OPTIONAL {
+        ?physiomid :balances_to ?anyNode .
+        BIND(IF(BOUND(?anyNode),"Clear","")AS ?clearPoint)
+    }
+    
+}
