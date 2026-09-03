@@ -2,8 +2,8 @@ import requests
 
 # ── Configuration ──────────────────────────────────────────────────────────────
 
-QUERY_ENDPOINT  = "http://localhost:7200/repositories/forestos_v2-1_20260826"
-UPDATE_ENDPOINT = "http://localhost:7200/repositories/forestos_v2-1_20260826/statements"
+QUERY_ENDPOINT  = "http://localhost:7200/repositories/REPONAME"
+UPDATE_ENDPOINT = "http://localhost:7200/repositories/REPONAME/statements"
 
 PREFIX = "PREFIX : <http://www.semanticweb.org/sumin/ontologies/2026/5/forestos-ontology-3#>"
 RDFS   = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
