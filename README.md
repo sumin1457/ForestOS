@@ -178,6 +178,8 @@ Full diagrams and the SPARQL queries that verify this (including where the
 model shows the same node class resolving in State 1 but not State 2) are
 in [`docs/state_model.md`](docs/state_model.md).
 
+Python script for Named graph is in [`python/forestos_state_model_v2.py`](python/forestos_state_model_v2.py), explanation available in [`python/docs/forestos_state_model_design.md`](python/forestos_state_model_design.md).
+
 MI remains mapped as the earlier reference case and is included there for
 comparison.
 
@@ -217,16 +219,14 @@ Forest OS/
 │   ├── forestos_ontology_v2.rdf        ← OWL ontology (open in Protégé)
 │   └── forestos_inferred_v2.rdf        ← Inferred axioms (import in GraphDB for SPARQL)
 ├── python/
-│   ├── forestos_state_graph_builder.py
-│   ├── forestos_clinical_timeline.py
-│   └── forestos_disease_score.py
+│   └── forestos_state_model_v2.py      ← NamedGraph builder   
 ├── sparql/                             ← see sparql/README.md for full index
 ├── docs/
 │   ├── state_model.md                  ← 4-state walkthrough + case studies
 │   ├── architecture.md
-│   ├── key_findings.md
 │   ├── known_limitations.md
-│   └── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
+│   ├── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
+│   └── archive                         ← v1 archive
 └── diagrams/
 │   ├── hypercholesterolaemia_state0_homeostatic.png
 │   ├── hypercholesterolaemia_state1_physiological.png
