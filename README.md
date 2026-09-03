@@ -223,11 +223,11 @@ Forest OS/
 ├── sparql/                             ← see sparql/README.md for full index
 ├── docs/
 │   ├── state_model.md                  ← 4-state walkthrough + case studies
-│   ├── architecture.md
+│   ├── key_architectural_decision.md.  ← object Property/universial nodes design decision
 │   ├── known_limitations.md
 │   ├── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
 │   └── archive                         ← v1 archive
-└── diagrams/
+└── diagrams/                           ← png files for state_model.md
 │   ├── hypercholesterolaemia_state0_homeostatic.png
 │   ├── hypercholesterolaemia_state1_physiological.png
 │   ├── hypercholesterolaemia_state2_pathological.png
@@ -257,8 +257,8 @@ Forest OS/
 
 ```
 Now:        Four states update
-            Homeostatic baseline layer (cortisol, SNS/PSNS, COX balance)
-            SPARQL folder documentation
+            SPARQL query
+            NamdeGraph architecture solving universal nodes problem
 
 Later:      L4 Genetic layer deepened (FLG gene → Filaggrin protein →
             Skin Barrier Integrity — Gene Ontology alignment)
