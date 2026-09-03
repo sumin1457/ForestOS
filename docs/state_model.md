@@ -67,7 +67,7 @@ confirm the same structure holds in the asserted graph, not just the
 diagram.
 
 **Which pathological nodes have no pharmacological resolution?**
-(`sparql/pathological_unresolved_nodes.sparql`)
+(`sparql/pathological_unresolved_nodes.rq`)
 
 Saturated_Fatty_Acid, Reactive_Oxygen_Species, and Liver_X_Receptor come
 back `"Unresolved"` — no downstream node in `Pharmacological` state. Statin
@@ -76,7 +76,7 @@ is the queryable version of "the drug closes the LDL loop; the root cause
 remains open."
 
 **Does the same node class resolve differently by state?**
-(`sparql/physio_vs_patho_divergence.sparql`)
+(`sparql/physio_vs_patho_divergence.rq`)
 
 `LX_Receptor` (LXR) is the clearest case: the State 1 (physiological)
 instance has an outgoing `balances_to` edge — it resolves. The State 2
