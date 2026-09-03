@@ -243,7 +243,7 @@ Forest OS/
 ## Current Coverage
 
 - **2 diseases mapped:** Myocardial Infarction, Hypercholesterolaemia (primary, most complete)
-- **Cross-disease SPARQL querying validated**
+- **SPARQL query validated** [`sparql/README.md`](sparql/README.md)
 
 **NOTE** Asthma: mapped under V1 architecture. Drug-perturbation and 
   symptom-traversal queries work identically (proving those query 
