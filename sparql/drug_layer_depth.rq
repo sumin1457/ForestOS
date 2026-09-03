@@ -22,4 +22,4 @@ SELECT DISTINCT ?drug ?target ?layer (COUNT(DISTINCT ?downstream)AS ?eliminatedN
     }
 
 GROUPBY ?drug ?target ?layer 
-ORDER BY DESC(?eliminatedNodes)}
+ORDER BY DESC(?eliminatedNodes)
