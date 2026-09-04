@@ -148,7 +148,7 @@ Adding a new disease means adding its entry point. Existing location
 contexts are inherited automatically.
 
 Python script for Named graph is in [`python/forestos_state_model_v2.py`](python/forestos_state_model_v2.py), 
-explanation available in [`python/docs/forestos_state_model_design.md`](python/forestos_state_model_design.md).
+explanation available in [`python/docs/forestos_state_model_design.md`](python/docs/forestos_state_model_design.md).
 
 ---
 
