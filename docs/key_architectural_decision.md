@@ -5,8 +5,7 @@ This document explains the predicates used in the ontology. Since the state mode
 ## 1. Object Property Taxonomy
  
 Every predicate used elsewhere in this document sits inside one of four
-top-level branches under `owl:topObjectProperty`. Documented here once,
-rather than re-explained piecemeal wherever a predicate is used.
+top-level branches under `owl:topObjectProperty`. 
  
 ```
 owl:topObjectProperty
@@ -37,10 +36,7 @@ owl:topObjectProperty
 Models epigenetic/transcriptional detail (`activates_transcription`,
 `is_translated_into`, `represses_transcription`). Present in the ontology
 but not yet used to the depth this level of granularity would support —
-kept in place for when a disease case study actually needs it, rather
-than pruned, per Design Philosophy §7 (fidelity matches competency
-questions — don't remove structure that's correctly anticipatory, only
-structure that's speculative and unused).
+kept in place for when a disease case study actually needs it.
  
 ### Layer_Transition_Logic — `deviates_into`
 Marks the transition from a normal physiological state to a pathological
@@ -62,8 +58,7 @@ same one.
 ### System_Event_Logic
 The generic cascade machinery — activation, causation, suppression,
 gating, binding, quantitative up/down-regulation. This is the "ordinary
-biology happening" layer, used across all four states via the
-source-anchored rule (§3 below) rather than being state-specific itself.
+biology happening" layer, used across all four states.
  
 ### System_Progression_Logic — `progresses_to`
 The one predicate that explicitly involves **time**. Used to bridge
