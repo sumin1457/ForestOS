@@ -95,8 +95,7 @@ State 0 — Homeostatic (Negative Feedback, Loop Closed)
 State 1 — Physiological (Emergency Signal, Loop Still Closes)
   A larger-magnitude or acute trigger arrives — still using the same
   Sensor–Switch–Effector architecture as State 0, just responding to a
-  bigger disturbance. The defining feature is not signal size but that the
-  correction pathway still successfully closes the loop.
+  bigger disturbance. The correction pathway still successfully closes the loop.
 
 State 2 — Pathological (Loop Blocked)
   The same architecture is engaged, but the loop fails to close, via one
@@ -125,17 +124,20 @@ Default graph:        complete ontology (Protégé export) — Biomedical layer,
                        therapeutic perturbation (drugs). All nodes, all
                        asserted edges.
 
-Homeostatic graph:    Nodes with hasSystemState: "Homeostatic" entry + AUTO
-                       full downstream cascade edges + data property preserved.
+Homeostatic graph:    Nodes with hasSystemState: "Homeostatic" entry +
+                      data property preserved.
 
-Physiological graph:  Nodes with hasSystemState: "Physiological" entry + AUTO
-                       full downstream cascade edges + restores/balances edges
-                       (resolution branch) + data property assertion.
+Physiological graph:  Nodes with hasSystemState: "Physiological" entry +
+                      restores/balances_to/balances edges (resolution branch) +
+                      data property assertion.
 
 Pathological graph:   Nodes with hasSystemState: "Pathological" entry +
                        mimics/deviates_into (signal hijacking + transition) +
-                       AUTO-traverses full downstream from deviates_into
-                       targets + data property assertion.
+                      data property assertion.
+
+Pharmacological graph: Nodes with hasSystemState: "Pharmacological" entry +
+                       resolves_to edge + data property assertion.
+
 ```
 
 A single SPARQL query can enter through a disease context graph, traverse
@@ -144,6 +146,9 @@ location-specific consequence — without duplicating a single node.
 
 Adding a new disease means adding its entry point. Existing location
 contexts are inherited automatically.
+
+Python script for Named graph is in [`python/forestos_state_model_v2.py`](python/forestos_state_model_v2.py), 
+explanation available in [`python/docs/forestos_state_model_design.md`](python/forestos_state_model_design.md).
 
 ---
 
@@ -178,7 +183,6 @@ Full diagrams and the SPARQL queries that verify this (including where the
 model shows the same node class resolving in State 1 but not State 2) are
 in [`docs/state_model.md`](docs/state_model.md).
 
-Python script for Named graph is in [`python/forestos_state_model_v2.py`](python/forestos_state_model_v2.py), explanation available in [`python/docs/forestos_state_model_design.md`](python/forestos_state_model_design.md).
 
 MI remains mapped as the earlier reference case and is included there for
 comparison.
