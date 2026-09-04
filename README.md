@@ -24,8 +24,7 @@ Full architecture explanation lives in [`docs/key_architectural_decision.md`](do
 
 ## Conceptual Framework
 
-The ontology separates five ontological modes — not as five independent
-categories, but as five relational roles around a single biomedical layer:
+The ontology separates five ontological modes as five relational roles around a single biomedical layer:
 
 ```
 Clinical_Framing  ────────────────  human-imposed disease label
@@ -65,7 +64,7 @@ four layers:
 | L1 — Infrastructure | Bronchoconstriction, ischaemia, atherosclerosis | Tissue-level consequence |
 
 
-Extra Layer:
+Extra Layers:
 | Layer | Domain | Role |
 |---|---|---|
 | L1.5 — Enzyme | ACE, COX, HMG-CoA | Protein-level |
@@ -74,8 +73,7 @@ Extra Layer:
 Drug intervention depth is computed from layer of action. A drug acting at
 L3 suppresses more downstream nodes and is structurally closer to the
 disease root than one acting at L1 — this is computed directly by
-[`sparql/drug_layer_depth.rq`](sparql/drug_layer_depth.rq),
-not asserted by hand.
+[`sparql/drug_layer_depth.rq`](sparql/drug_layer_depth.rq).
 
 ---
 
@@ -230,10 +228,7 @@ Forest OS/
 │   ├── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
 │   └── archive                         ← v1 archive
 └── diagrams/                           ← png files for state_model.md
-│   ├── hypercholesterolaemia_state0_homeostatic.png
-│   ├── hypercholesterolaemia_state1_physiological.png
-│   ├── hypercholesterolaemia_state2_pathological.png
-└── └── hypercholesterolaemia_state3_pharmacological.png
+
 ```
 
 **Stack:** Protégé · OWL 2 DL · SWRL · SPARQL 1.1 · GraphDB · Python 3
@@ -303,13 +298,12 @@ Later:      L4 Genetic layer deepened (FLG gene → Filaggrin protein →
 
 ## Background
 
-Built by a 3rd year MPharm student (2026/27) at the University of
-Manchester exploring biomedical knowledge architecture. The project began
-from a specific conviction: biological cascades are not linear lists of
-facts, they have real semantic structure — which node causes which, at
-what layer, resolved or not — and that structure should be representable
-formally, not just described in prose. Forest OS is an attempt to
-translate pathophysiology into something a query can actually traverse.
+Built by a 3rd year MPharm student (2026/27) at the University of Manchester
+exploring biomedical knowledge architecture. The project started from a 
+simple observation: biological cascades aren't flat lists of facts — there's 
+real structure underneath them, which node causes which, at what layer, resolved
+or not. Forest OS is an attempt to actually draw that structure out and 
+put it into a form a query can traverse.
 
 SNOMED-CT Foundation Course completed (July 2026).
 
