@@ -63,8 +63,7 @@ SFA ever being addressed. The drug closes the LDL loop; the root cause
 ## SPARQL Verification
 
 The four diagrams above are hand-built in Protégé. The following queries
-confirm the same structure holds in the asserted graph, not just the
-diagram.
+confirm the same structure holds in the asserted graph.
 
 **Which pathological nodes have no pharmacological resolution?**
 (`sparql/pathological_unresolved_nodes.rq`)
