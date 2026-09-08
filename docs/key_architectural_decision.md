@@ -96,8 +96,7 @@ be nothing on the Physiological-state instance to compare against the
 Pathological-state instance's absence of resolution.
  
 ### System_Regulation_Logic — `feedbacks`, `switches_on`, `switches_off`
-`switches_on`/`switches_off` is the ambiguous predicate pair discussed in
-§3 below (source-anchored, not self-describing). `feedbacks` is
+`switches_on`/`switches_off` links Regulatory switch and Sensor. `feedbacks` is
 separate — it represents the closed-loop signal from an Effector back to
 its originating Regulatory_Switch, and is what makes negative/positive
 feedback chains queryable directly, e.g.
@@ -125,9 +124,9 @@ the *mechanistic reason* for that manifestation is a separate, traceable
 path through the Biomedical_Layer.
  
 ### Drug_Intervention_Logic
-Covered in more detail under Key Findings §4 (`perturbs_mechanistically`
-vs `therapeutic_intent`). `Effect` (`resolves`/`resolves_to`) is the
-State 3 resolution predicate — `resolves_to` specifically is the
+Covered in more detail under Key Findings §3, Secondary Design Decisions 
+(`perturbs_mechanistically`vs `therapeutic_intent`). `Effect` (`resolves`/`resolves_to`) 
+is the State 3 resolution predicate — `resolves_to` specifically is the
 self-describing predicate used in the state graph builder.
  
 ### External_Logic — `triggers`
