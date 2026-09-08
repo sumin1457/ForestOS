@@ -46,14 +46,24 @@ mechanism below.
  
 ### Signal_Semantics_Logic — `mimics`
 Represents a **false trigger** — a signal that structurally resembles a
-real physiological trigger but isn't one. `Plaque_Rupture --mimics-->
-Injury` is the canonical case: the downstream cascade fires as if a real
-injury occurred, because the signal is indistinguishable from one at the
-point it's sensed. `mimics` and `deviates_into` are often present
-together at a State 2 entry point (false trigger + broken brake, per the
-README's State 2 description) but are separate predicates because they
-describe different failure mechanisms, not different strengths of the
-same one.
+real physiological trigger closely enough that downstream machinery
+cannot distinguish it from the real one at the point of sensing.
+
+Canonical case: `Plaque_Rupture --mimics--> Injury`. The cascade fires
+exactly as it would for genuine tissue injury — `Injury` triggers the
+normal physiological clotting response `(Injury → ... → Blood_Clot)` —
+because the entry signal is indistinguishable from a real trigger. The
+pathology isn't in the cascade responding; it's in what triggered it.
+Where this response then fails to resolve (chronic re-triggering, no
+clearance mechanism engaging) is where `Blood_Clot --deviates_into--> Vascular_Blockage` enters — the separate, second failure: not a false
+signal anymore, but the loop itself failing to close.
+
+`mimics` and `deviates_into` are often present together at a State 2
+entry point (false trigger + broken brake, per the README's State 2
+description) but are separate predicates because they describe different
+failure mechanisms — one at the input (a fake signal fools the sensor),
+one at the resolution (a real signal is sensed correctly but the
+correction never engages) — not two strengths of the same failure.
  
 ### System_Event_Logic
 The generic cascade machinery — activation, causation, suppression,
@@ -62,12 +72,9 @@ biology happening" layer, used across all four states.
  
 ### System_Progression_Logic — `progresses_to`
 The one predicate that explicitly involves **time**. Used to bridge
-physiology into pathology across a temporal axis rather than a single
-discrete transition — e.g. `Blood_Clot progresses_to Ischaemia`. This is
-the predicate the clinical timeline script reads, and it's structurally
-distinct from `deviates_into` for that reason: `deviates_into` marks a
-state boundary being crossed, `progresses_to` marks a duration between
-two points.
+physiology into pathology across a temporal axis  — e.g. `Vascular_Blockage --progresses_to--> Ischaemia`, `LDL_Deviated --progresses_to--> Atherosclerosis`. 
+It is structurally distinct from `deviates_into`: `deviates_into` 
+marks a state boundary being crossed, `progresses_to` marks a duration between two points.
  
 ### System_Recovery_Logic — `balances`, `balances_to`, `restores`
 Used only in State 1 (Physiological) — the self-resolving loop. The
