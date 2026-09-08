@@ -228,7 +228,7 @@ Forest OS/
 ├── sparql/                             ← see sparql/README.md for full index
 ├── docs/
 │   ├── state_model.md                  ← 4-state walkthrough + case studies
-│   ├── key_architectural_decision.md   ← object Property/universial nodes design decision
+│   ├── key_architectural_decision.md   ← object Property/universal nodes design decision
 │   └── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
 └── diagrams/                           ← png files for state_model.md
 
