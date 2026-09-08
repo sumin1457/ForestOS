@@ -149,4 +149,4 @@ instance has an outgoing `balances_to` edge.
 The `physio_vs_patho_divergence` query currently returns a positive case for
 `LX_Receptor`: the physiological instance clears (`"Clear"`), the
 pathological instance of the same class does not. This is a concrete,
-queryable instance of the model's core claim — see `docs/key_findings.md`.
+queryable instance of the model's core claim — see [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md).
