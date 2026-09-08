@@ -60,18 +60,7 @@ without themselves belonging to any one state — this is intentional, not
 a gap. The default graph remains the complete, untyped record of every
 node and edge; the state graphs are filtered views over it.
 
-## Predicate table: self-describing 
-
-Some predicates introduced with the Hypercholesterolaemia update are
-**self-describing** — the predicate itself only ever appears in one state,
-so it can be asserted into its graph directly, with no `hasSystemState`
-check needed at all:
-
-| Predicate | Graph | Why unambiguous |
-|---|---|---|
-| `balances_to`, `restores` | Physiological | Only used for the State 1 recovery/resolution branch |
-| `deviates_into`, `mimics` | Pathological | Only used for the false-trigger / state-transition mechanism that defines State 2 |
-| `resolves_to` | Pharmacological | Only used to describe a drug closing a blocked loop — State 3 by definition |
+Full predicate taxonomy and reasoning: [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) 
 
 ## What this trades away
 
