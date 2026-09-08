@@ -1,7 +1,7 @@
 # Forest OS
 ### A Biomedical Knowledge Architecture for Disease-as-Deviation Modelling
 
-Built in OWL/Protégé. Queried via SPARQL. Simulated with Python for named graphs.
+Built in OWL/Protégé. Queried via SPARQL. Named graphs built and queried via Python + GraphDB.
 
 ---
 
@@ -240,7 +240,7 @@ Forest OS/
 
 ## Current Coverage
 
-- **2 diseases mapped:** Myocardial Infarction, Hypercholesterolaemia (primary, most complete)
+- **2 diseases mapped:** 2 diseases mapped under the current architecture (V2); a third (Asthma) under migration from V1 — see note below.
 - **SPARQL query validated** [`sparql/README.md`](sparql/README.md)
 
 **NOTE** 
@@ -295,9 +295,8 @@ Now:        Four states update
             SPARQL query
             NamdeGraph architecture solving universal nodes problem
 
-Later:      RDFlib extension
-            BFO alignment
-            Literature-grounded rate constants reification (ChEMBL, primary papers)
+Longer-term: BFO alignment is directions I'm exploring, not committed next steps
+
 ```
 
 ---
