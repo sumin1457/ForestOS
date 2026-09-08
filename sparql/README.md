@@ -79,7 +79,7 @@ reach — a gap map of the model, not just a traversal. Distinguishes
 with `hasSystemState "Pharmacological"`.
 
 **Result shape:** `probNode | class | resolvingNode | clearState`
-(`clearState` is `"Resolved"` or `"Unresolved"`)
+(`clearState` is `"Pharmacologically Resolved"` or `"Unresolved"`)
 
 | Problem Node | Class | Resolving Node | Clear State |
 |---|---|---|---|
