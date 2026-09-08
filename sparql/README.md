@@ -17,8 +17,8 @@ that intervention eliminate?
 depth score — a drug acting at L3 provably clears more downstream nodes
 than one acting at L1, rather than this being asserted by hand.
 
-**Reads:** `Drug_Intervention` → `perturbs_mechanistically` → target →
-(`System_Event_Logic`|`Genetic_Logic`|`resolves_to`)* → downstream, grouped
+**Reads:** `Drug_Intervention` --`perturbs_mechanistically`--> target --
+(`System_Event_Logic`|`Genetic_Logic`|`resolves_to`)*--> downstream, grouped
 by drug/target/layer, counted, ordered by eliminated nodes descending.
 
 **Result shape:** `drug | target | layer | eliminatedNodes`
@@ -48,9 +48,9 @@ beyond the immediate resolution?
 closes a traceable loop back through the ontology rather than terminating
 at an isolated node.
 
-**Reads:** `Statin_instance` → `perturbs_mechanistically` → target →
-`resolves_to`+ → drugEffect → (state-change predicates)* → mid →
-`resolves_to`+ → secondaryEffect.
+**Reads:** `Statin_instance` --`perturbs_mechanistically`--> target --
+`resolves_to`+ --> drugEffect --(state-change predicates)*--> mid --
+`resolves_to`+--> secondaryEffect.
 
 **Result shape:** `drugEffect | secondaryEffect`
 
@@ -60,7 +60,7 @@ at an isolated node.
 | Cholesterol_ER_pharmacological | Cholesterol_ER_pharmacological |
 | Cholesterol_ER_pharmacological | LDL_pharmacological |
 
-**NOTES**: Second row (repeated cholesterol) shows a positive feedback. 
+**NOTES**: Second row (repeated cholesterol) shows a closed feedback. 
 
 ---
 
@@ -72,9 +72,9 @@ have no pharmacological resolution anywhere downstream?
 reach — a gap map of the model, not just a traversal. Distinguishes
 "resolved by an existing drug class" from "structurally still open."
 
-**Reads:** `Hypercholesterolaemia_instance` → `has_etiology` → entry →
+**Reads:** `Hypercholesterolaemia_instance` --`has_etiology`--> entry --
 (`System_Event_Logic`|`Genetic_Logic`|`deviates_into`|`switches_on`|
-`switches_off`)* → probNode, checked for a `hasSystemState
+`switches_off`)* --> probNode, checked for a `hasSystemState
 "Pathological"` node, then optionally matched against a downstream node
 with `hasSystemState "Pharmacological"`.
 
@@ -101,9 +101,9 @@ and what secondary effects does that resolution produce?
 on its own — is actually true of the asserted graph, not just true in the
 text description.
 
-**Reads:** `Saturated_Fatty_Acid` with `hasConcentrationState "High"` →
-(`System_Event_Logic`|`Genetic_Logic`)* → physioEffect → `balances_to` →
-resolveEffect → (state-change predicates)+ → mid2 → `balances_to` →
+**Reads:** `Saturated_Fatty_Acid` with `hasConcentrationState "High"` --
+(`System_Event_Logic`|`Genetic_Logic`)* --> physioEffect -- `balances_to` -->
+resolveEffect --(System_Event_Logic)+ --> mid2 -- `balances_to` -->
 secondaryEffect. Filtered to nodes with `hasSystemState "Physiological"`.
 
 **Result shape:** `physioEffect | resolveEffect | secondaryEffect`
