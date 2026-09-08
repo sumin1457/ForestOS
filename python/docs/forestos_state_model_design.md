@@ -60,7 +60,7 @@ without themselves belonging to any one state — this is intentional, not
 a gap. The default graph remains the complete, untyped record of every
 node and edge; the state graphs are filtered views over it.
 
-## Predicate table: self-describing vs. ambiguous
+## Predicate table: self-describing 
 
 Some predicates introduced with the Hypercholesterolaemia update are
 **self-describing** — the predicate itself only ever appears in one state,
@@ -72,14 +72,6 @@ check needed at all:
 | `balances_to`, `restores` | Physiological | Only used for the State 1 recovery/resolution branch |
 | `deviates_into`, `mimics` | Pathological | Only used for the false-trigger / state-transition mechanism that defines State 2 |
 | `resolves_to` | Pharmacological | Only used to describe a drug closing a blocked loop — State 3 by definition |
-
-One predicate pair is the exception: **`switches_on` / `switches_off`**.
-These appear across States 0, 1, and 2 — e.g. SCAP switching SREBP-2
-on or off happens in the homeostatic loop, the physiological response,
-*and* the pathological override. The predicate alone doesn't tell you
-which state is in play; only the node asserting it does. So `switches_on`/
-`switches_off` stays in the generic, source-anchored path — treated like
-`causes`/`binds`/`modulates` rather than like the self-describing set.
 
 ## What this trades away
 
