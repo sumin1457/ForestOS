@@ -108,7 +108,7 @@ proves it — it's just unreachable from the State 2 entry point.
 
 ### 2 — Unresolved nodes expose real gaps in drug coverage
 
-`pathological_unresolved_nodes.sparql` shows `Saturated_Fatty_Acid`,
+`pathological_self_resolution.sparql` shows `Saturated_Fatty_Acid`,
 `Reactive_Oxygen_Species`, and `Liver_X_Receptor` returning `"Unresolved"`
 — no downstream node in Pharmacological state. Statin resolves `Oxysterol`
 and `LDL`, but never touches the SFA/ROS root. This is the queryable
