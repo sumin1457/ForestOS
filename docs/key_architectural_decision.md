@@ -102,7 +102,7 @@ separate — it represents the closed-loop signal from an Effector back to
 its originating Regulatory_Switch, and is what makes negative/positive
 feedback chains queryable directly, e.g.
 `LDL_Receptor_Low --feedbacks--> Cholesterol_ER_Low_instance`. Most
-useful for showing Homeostatic/Physiological states specifically, since
+useful for showing Homeostatic states specifically, since
 a functioning feedback edge is close to the definition of a closed loop.
  
 ### Clinical_Logic
@@ -139,7 +139,7 @@ the body's own machinery.
  
 ---
 
-## 2. Major Findings 
+## 2. Major Finding
 
 ### The universal-node problem: same Tbox class, divergent-point instances
 
@@ -148,7 +148,7 @@ The v1 tension "shared universal nodes lose disease context" (see
 of every instance, but selectively: a node stays under one Tbox class, and
 multiple *instances* of that class exist, each tagged with a different
 `hasSystemState` — but only at nodes that are genuine divergence points or
-structurally pivotal for what happens next. Most of the cascade doesn't
+structurally crucial for what happens next. Most of the cascade doesn't
 need this; only the nodes where physiological and pathological paths
 actually diverge do.
 
@@ -167,77 +167,35 @@ state. This can be expressed either as a same-default-graph query
 state graphs, depending on whether the comparison needs to stay within one
 state's context or cross between two.
 
-`physio_vs_patho_divergence.rq`'s LX_Receptor result (below) is the first
-concrete case of this pattern doing real work, not just a one-off query.
-
-### `balances` vs `balances_to`: designing an edge for what the query needs to return
- 
-`System_Recovery_Logic` has three predicates — `balances`, `balances_to`,
-`restores` — and the first two look almost redundant until you look at
-what each one actually points *at*, which is a deliberate query-design
-choice rather than a naming variant.
- 
-`balances` points to **the problem being corrected** — the thing whose
-deviation triggered the response:
- 
-```
-High_Heart_Rate --balances--> Hypoxia
-```
- 
-This reads naturally as a sentence ("high heart rate balances [out]
-hypoxia") but it's structurally a dead end for querying: the object of the
-triple is the *cause*, not the *outcome*. A query walking `balances` edges
-can tell you what a node is compensating for, but not what state the
-system actually ends up in once compensation succeeds.
- 
-`balances_to` points to **the result state after correction**:
- 
-```
-LDL_Receptor_High_instance --balances_to--> LDL_Low_instance
-```
- 
-The object here is a resolved-state instance — something with its own
-`hasSystemState`, its own downstream edges, something you can keep
-traversing from. This is the version used in the resolution-chain
-queries, and it's why: `physiological_self_resolution.rq` needs to walk
-*forward* from a trigger to an actual outcome node, and
-`physio_vs_patho_divergence.rq` needs something concrete to check for the
-*absence* of on the pathological side. Neither works if the edge's object
-is the name of the problem rather than the shape of the solution.
- 
-Put another way — `balances` describes the relationship in prose terms
-("this offsets that"); `balances_to` describes it in traversal terms
-("this is where you arrive"). The ontology needed the second one for
-querying, so both were kept rather than picking one: `balances` stays
-useful for reading a single edge in isolation (e.g. inspecting the model
-in Protégé), while `balances_to` is what the SPARQL layer actually chains
-through. This is the same instinct as `perturbs_mechanistically` vs
-`therapeutic_intent` (below) — two predicates asserted separately because
-they answer different questions, not because one is a redundant
-restatement of the other.
- 
-`restores` is the plainer sibling of `balances_to` — used where a
-correction returns a node to a prior, already-modelled state rather than
-producing a new named outcome instance (e.g. `Cholesterol_ER` returning
-to its baseline `Cholesterol_ER_instance` rather than resolving into a
-distinct downstream node). All three are scoped to State 1
-(Physiological) only, since System_Recovery_Logic exists specifically to
-describe the self-resolving loop that defines that state.
-
+`physio_vs_patho_divergence.rq`'s LX_Receptor result is the first
+concrete case of this pattern doing real work.
 
 ---
 
 ## 3. Key Architectural Decisions 
 
+### Core State-Model Decisions
+
 | Decision | Reasoning |
 |---|---|
 | **State graph membership is asserted, not inferred** | A node belongs to a state graph if `hasSystemState "X"` is asserted directly. No downstream traversal. |
 | **Edges are source-anchored** | An edge belongs to graph X if its *source* node is tagged X, regardless of the target's tag status. Chosen over both-endpoints-required (too strict — disconnects neutral nodes like SCAP) and either-endpoint (too loose — duplicates edges into states they don't structurally belong to). |
-| **Self-describing predicates bypass hasSystemState** | `resolves_to` (State 3), `balances_to`/`restores` (State 1), `deviates_into`/`mimics` (State 2) are unambiguous by predicate alone — asserted directly into their graph, no tag check needed.|
-| **intervenesAtLayerScore removed** | Replaced by SPARQL `rdfs:subClassOf*` traversal from `perturbs_mechanistically` target (`drug_layer_depth.sparql`). Structure derives the score — no manual assertion. |
-| **perturbs_mechanistically vs therapeutic_intent** | Mechanism (`agonises_receptor`/`antagonises_receptor`/`upregulates`/`downregulates`) and clinical intent (`therapeutic_activation`/`therapeutic_suppression`) are asserted as independent properties, not collapsed into one label. A drug can mechanistically antagonise an inhibitory target to achieve a net activating intent — keeping them separate lets the ontology represent that gap. |
+| **Self-describing predicates bypass hasSystemState** | `resolves_to` (State 3), `balances_to`/`restores` (State 1), `deviates_into`/`mimics` (State 2) are unambiguous by predicate alone — asserted directly into their graph, no tag check needed. |
 | **Named graphs are filtered views over one default graph** | The default graph holds every asserted node and edge, untyped by state. The four state graphs (Homeostatic / Physiological / Pathological / Pharmacological) are built from it, not maintained as a separate source of truth. Rebuilding from the default graph after every Protégé export is the intended workflow (`rebuild_state_graphs()`). |
+
+### Secondary Design Decisions
+
+| Decision | Reasoning |
+|---|---|
+| **perturbs_mechanistically vs therapeutic_intent** | Mechanism (`agonises_receptor`/`antagonises_receptor`/`upregulates`/`downregulates`) and clinical intent (`therapeutic_activation`/`therapeutic_suppression`) are asserted as independent properties, not collapsed into one label. A drug can mechanistically antagonise an inhibitory target to achieve a net activating intent — keeping them separate lets the ontology represent that gap. |
 | **Pharmacological graph added as a 4th state** | v1 only materialised Homeostatic/Physiological/Pathological as named graphs; drug reasoning worked only by querying `resolves_to` directly against the default graph. v2 gives State 3 the same named-graph convenience as the others. |
+| **intervenesAtLayerScore removed** | Replaced by SPARQL `rdfs:subClassOf*` traversal from `perturbs_mechanistically` target (`drug_layer_depth.sparql`). Structure derives the score — no manual assertion. |
+
+### Deprioritized / Paused
+
+| Decision | Reasoning |
+|---|---|
 | **Disease Stage Score paused, not deleted** | Cascade complexity metric was confounded with modelling granularity (ABox decomposition density, not clinical severity) rather than a property of the disease itself. Moved to `docs/deprecated_ideas.md` pending an ODE-derived successor. |
+| **Clinical timeline paused, not deleted** | Acute/chronic pathology staging designed on `progresses_to` (the time-bearing predicate), but not yet integrated into the four-state model's SPARQL layer. Moved to `docs/deprecated_ideas.md` pending integration with the state graphs. |
 
 ---
