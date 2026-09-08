@@ -280,7 +280,7 @@ Forest OS/
 3. Run the script. It rebuilds the four state named graphs
    (Homeostatic / Physiological / Pathological / Pharmacological) from
    the default graph — see
-   [`docs/architecture_notes.md`](docs/architecture_notes.md) §2 for what
+   [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) §2 for what
    it does and why.
 
 ---
@@ -292,8 +292,7 @@ Now:        Four states update
             SPARQL query
             NamdeGraph architecture solving universal nodes problem
 
-Later:      L4 Genetic layer deepened (FLG gene → Filaggrin protein →
-            Skin Barrier Integrity — Gene Ontology alignment)
+Later:      RDFlib extension
             BFO alignment
             Literature-grounded rate constants reification (ChEMBL, primary papers)
 ```
