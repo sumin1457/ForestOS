@@ -229,7 +229,6 @@ Forest OS/
 ├── docs/
 │   ├── state_model.md                  ← 4-state walkthrough + case studies
 │   ├── key_architectural_decision.md   ← object Property/universial nodes design decision
-│   ├── known_limitations.md
 │   └── deprecated_ideas.md             ← ideas removed from active scope, kept for reference
 └── diagrams/                           ← png files for state_model.md
 
