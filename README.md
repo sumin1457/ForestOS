@@ -244,13 +244,17 @@ Forest OS/
 - **2 diseases mapped:** Myocardial Infarction, Hypercholesterolaemia (primary, most complete)
 - **SPARQL query validated** [`sparql/README.md`](sparql/README.md)
 
-**NOTE** Asthma: mapped under V1 architecture. Drug-perturbation and 
+**NOTE** 
+
+- Asthma: mapped under V1 architecture. Drug-perturbation and 
   symptom-traversal queries work identically (proving those query 
   patterns generalize across versions). Not yet migrated to V2's 
   hasSystemState/named-graph model — asthma's immune cascade doesn't 
   cleanly decompose into Homeostatic/Physiological/Pathological the 
   same way metabolic/cardiac feedback loops do, and resolving that 
   mismatch is next on the roadmap.
+
+- The Python named-graph builder was developed with AI pair-programming assistance; the ontology design, predicate taxonomy, and state-model architecture are independently authored.
 
 ---
 
