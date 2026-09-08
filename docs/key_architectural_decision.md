@@ -128,7 +128,7 @@ path through the Biomedical_Layer.
 Covered in more detail under Key Findings §4 (`perturbs_mechanistically`
 vs `therapeutic_intent`). `Effect` (`resolves`/`resolves_to`) is the
 State 3 resolution predicate — `resolves_to` specifically is the
-self-describing predicate used in the state graph builder (§3 below).
+self-describing predicate used in the state graph builder.
  
 ### External_Logic — `triggers`
 The entry point for anything originating outside the biological system
