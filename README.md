@@ -254,7 +254,7 @@ Forest OS/
   same way metabolic/cardiac feedback loops do, and resolving that 
   mismatch is next on the roadmap.
 
-- The Python named-graph builder was developed with AI pair-programming assistance; the ontology design, predicate taxonomy, and state-model architecture are independently authored.
+- The Python named-graph builder was developed with AI assistance; the ontology design, predicate taxonomy, and state-model architecture are independently authored.
 
 ---
 
