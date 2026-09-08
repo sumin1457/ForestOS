@@ -8,12 +8,10 @@ Built in OWL/Protégé. Queried via SPARQL. Named graphs built and queried via P
 ## What This Is
 
 Forest OS models disease as **location-specific deviation from a universal
-homeostatic baseline** — not as a catalogue of pathological nodes, but as a
-formal representation of where, how, and why healthy biological machinery
-goes wrong.
-
-The deviation map doesn't add new biology. It corrupts existing biology —
-in specific ways, at specific nodes — that drugs then target.
+homeostatic baseline**. Rather than listing pathological facts of disease, 
+ForestOS aims to translate dynamic biological physiology into queryable structure
+— where a disease's mechanism can be traced and compared against the healthy
+machinery it deviates from. 
 
 **Two companion docs go deeper**: [`docs/state_model.md`](docs/state_model.md) 
 works through the four-state model on a real case study, with diagrams and 
