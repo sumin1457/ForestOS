@@ -6,6 +6,9 @@ docstrings say *what* each function does; this file is for the *why*,
 so the reasoning doesn't get silently reverted by a future edit that
 re-introduces the problem v2 was written to fix.
 
+For the underlying ontology design rationale (predicate taxonomy, why 
+membership is asserted not inferred), see [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) 
+
 ---
 
 ## Why v1_3 was replaced
