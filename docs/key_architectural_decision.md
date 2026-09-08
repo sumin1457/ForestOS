@@ -1,4 +1,4 @@
-This document explains the predicates used in the ontology. Since the state model is built on both a data property (`hasSystemState`) and state-specific predicates, understanding these predicates is beneficial for interpreting the key findings and architectural decisions below. This document also covers the architectural decisions and major findings themselves.
+This document explains the predicates used in the ontology. Since the state model is built on both a data property (`hasSystemState`) and state-specific predicates, understanding these predicates is beneficial for interpreting the key findings and architectural decisions below. This document also covers major findings and the architectural decisions themselves.
 
 ---
 
@@ -132,22 +132,7 @@ the body's own machinery.
  
 ---
 
-## 2. Key Architectural Decisions 
-
-| Decision | Reasoning |
-|---|---|
-| **State graph membership is asserted, not inferred** | A node belongs to a state graph if `hasSystemState "X"` is asserted directly. No downstream traversal. |
-| **Edges are source-anchored** | An edge belongs to graph X if its *source* node is tagged X, regardless of the target's tag status. Chosen over both-endpoints-required (too strict — disconnects neutral nodes like SCAP) and either-endpoint (too loose — duplicates edges into states they don't structurally belong to). |
-| **Self-describing predicates bypass hasSystemState** | `resolves_to` (State 3), `balances_to`/`restores` (State 1), `deviates_into`/`mimics` (State 2) are unambiguous by predicate alone — asserted directly into their graph, no tag check needed.|
-| **intervenesAtLayerScore removed** | Replaced by SPARQL `rdfs:subClassOf*` traversal from `perturbs_mechanistically` target (`drug_layer_depth.sparql`). Structure derives the score — no manual assertion. |
-| **perturbs_mechanistically vs therapeutic_intent** | Mechanism (`agonises_receptor`/`antagonises_receptor`/`upregulates`/`downregulates`) and clinical intent (`therapeutic_activation`/`therapeutic_suppression`) are asserted as independent properties, not collapsed into one label. A drug can mechanistically antagonise an inhibitory target to achieve a net activating intent — keeping them separate lets the ontology represent that gap. |
-| **Named graphs are filtered views over one default graph** | The default graph holds every asserted node and edge, untyped by state. The four state graphs (Homeostatic / Physiological / Pathological / Pharmacological) are built from it, not maintained as a separate source of truth. Rebuilding from the default graph after every Protégé export is the intended workflow (`rebuild_state_graphs()`). |
-| **Pharmacological graph added as a 4th state** | v1 only materialised Homeostatic/Physiological/Pathological as named graphs; drug reasoning worked only by querying `resolves_to` directly against the default graph. v2 gives State 3 the same named-graph convenience as the others. |
-| **Disease Stage Score paused, not deleted** | Cascade complexity metric was confounded with modelling granularity (ABox decomposition density, not clinical severity) rather than a property of the disease itself. Moved to `docs/deprecated_ideas.md` pending an ODE-derived successor. |
-
----
-
-## 3. Major Findings 
+## 2. Major Findings 
 
 ### The universal-node problem: same Tbox class, divergent-point instances
 
@@ -160,9 +145,8 @@ structurally pivotal for what happens next. Most of the cascade doesn't
 need this; only the nodes where physiological and pathological paths
 actually diverge do.
 
-This is deliberately not blanket-applied. Duplicating every node per state
-would recreate the eczema/asthma over-duplication problem the architecture
-is trying to avoid. The instance split is
+Duplicating every node per state would create over-duplication problem 
+the architecture is trying to avoid. The instance split is
 reserved for nodes where the divergence is the finding — e.g. `LX_Receptor`,
 where the state-specific instances resolve differently and *that
 difference is the point*.
@@ -232,5 +216,21 @@ to its baseline `Cholesterol_ER_instance` rather than resolving into a
 distinct downstream node). All three are scoped to State 1
 (Physiological) only, since System_Recovery_Logic exists specifically to
 describe the self-resolving loop that defines that state.
+
+
+---
+
+## 3. Key Architectural Decisions 
+
+| Decision | Reasoning |
+|---|---|
+| **State graph membership is asserted, not inferred** | A node belongs to a state graph if `hasSystemState "X"` is asserted directly. No downstream traversal. |
+| **Edges are source-anchored** | An edge belongs to graph X if its *source* node is tagged X, regardless of the target's tag status. Chosen over both-endpoints-required (too strict — disconnects neutral nodes like SCAP) and either-endpoint (too loose — duplicates edges into states they don't structurally belong to). |
+| **Self-describing predicates bypass hasSystemState** | `resolves_to` (State 3), `balances_to`/`restores` (State 1), `deviates_into`/`mimics` (State 2) are unambiguous by predicate alone — asserted directly into their graph, no tag check needed.|
+| **intervenesAtLayerScore removed** | Replaced by SPARQL `rdfs:subClassOf*` traversal from `perturbs_mechanistically` target (`drug_layer_depth.sparql`). Structure derives the score — no manual assertion. |
+| **perturbs_mechanistically vs therapeutic_intent** | Mechanism (`agonises_receptor`/`antagonises_receptor`/`upregulates`/`downregulates`) and clinical intent (`therapeutic_activation`/`therapeutic_suppression`) are asserted as independent properties, not collapsed into one label. A drug can mechanistically antagonise an inhibitory target to achieve a net activating intent — keeping them separate lets the ontology represent that gap. |
+| **Named graphs are filtered views over one default graph** | The default graph holds every asserted node and edge, untyped by state. The four state graphs (Homeostatic / Physiological / Pathological / Pharmacological) are built from it, not maintained as a separate source of truth. Rebuilding from the default graph after every Protégé export is the intended workflow (`rebuild_state_graphs()`). |
+| **Pharmacological graph added as a 4th state** | v1 only materialised Homeostatic/Physiological/Pathological as named graphs; drug reasoning worked only by querying `resolves_to` directly against the default graph. v2 gives State 3 the same named-graph convenience as the others. |
+| **Disease Stage Score paused, not deleted** | Cascade complexity metric was confounded with modelling granularity (ABox decomposition density, not clinical severity) rather than a property of the disease itself. Moved to `docs/deprecated_ideas.md` pending an ODE-derived successor. |
 
 ---
