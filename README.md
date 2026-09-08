@@ -15,10 +15,9 @@ goes wrong.
 The deviation map doesn't add new biology. It corrupts existing biology —
 in specific ways, at specific nodes — that drugs then target.
 
-Full walkthrough of the state model, with a worked case study
-(Hypercholesterolaemia), lives in [`docs/state_model.md`](docs/state_model.md).
-
-Full architecture explanation lives in [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md).
+**Two companion docs go deeper**: [`docs/state_model.md`](docs/state_model.md) 
+works through the four-state model on a real case study, with diagrams and 
+SPARQL-verified results. [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) explains the predicate design and named-graph mechanics that make the model queryable — including how the ontology handles a universal biological process (like a receptor) needing to behave differently across disease states.
 
 ---
 
@@ -212,6 +211,8 @@ usually a suppressive intent too — but a drug could mechanistically
 antagonise an inhibitory receptor in order to achieve a net activating
 therapeutic intent downstream. Keeping the two properties independent lets
 the ontology represent that gap instead of collapsing it into one label.
+
+Full predicate taxonomy and the reasoning behind every top-level branch: [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md)
 
 ---
 
