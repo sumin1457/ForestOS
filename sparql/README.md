@@ -50,7 +50,7 @@ at an isolated node.
 
 **Reads:** `Statin_instance` --`perturbs_mechanistically`--> target --
 `resolves_to`+ --> drugEffect --(state-change predicates)*--> mid --
-`resolves_to`+--> secondaryEffect.
+`resolves_to`+ --> secondaryEffect.
 
 **Result shape:** `drugEffect | secondaryEffect`
 
@@ -60,7 +60,8 @@ at an isolated node.
 | Cholesterol_ER_pharmacological | Cholesterol_ER_pharmacological |
 | Cholesterol_ER_pharmacological | LDL_pharmacological |
 
-**NOTES**: Second row (repeated cholesterol) shows a closed feedback. 
+**Notes on results worth flagging**: 
+Second row (repeated cholesterol) shows a closed feedback. 
 
 ---
 
@@ -99,7 +100,7 @@ and what secondary effects does that resolution produce?
 
 **Why it matters:** Confirms State 1's defining property — the loop closes
 on its own — is actually true of the asserted graph, not just true in the
-text description.
+text description. 
 
 **Reads:** `Saturated_Fatty_Acid` with `hasConcentrationState "High"` --
 (`System_Event_Logic`|`Genetic_Logic`)* --> physioEffect -- `balances_to` -->
@@ -115,6 +116,20 @@ secondaryEffect. Filtered to nodes with `hasSystemState "Physiological"`.
 | LDL_SFA | | |
 | Oxysterol_High | | |
 | LX_Receptor_physiological | SFA_Low | LDL_Low |
+
+**Note on results worth flagging:** 
+Only `LX_Receptor_physiological` shows a populated
+`Resolve Effect`/`Secondary Effect` — this is expected, not a gap. The
+other four rows (`VLDL_SFA`, `Cholesterol_ER_physiological`, `LDL_SFA`,
+`Oxysterol_High`) are upstream nodes in the same cascade, not independent
+resolution points; the loop only actually closes once it reaches
+`LX_Receptor_physiological`, which `balances_to SFA_Low` — the switch
+back to a homeostatic state. From there, lower SFA means less Oxysterol
+synthesised, which lifts the Insig-mediated block on SCAP, reactivating
+SREBP-2 and raising LDLR transcription — which is what clears LDL and
+produces `LDL_Low` as the secondary effect downstream. So the four blank
+rows aren't failures to resolve; they're the earlier steps in the same
+chain that terminates at the one row that does.
 
 ---
 
@@ -143,10 +158,10 @@ instance has an outgoing `balances_to` edge.
 | Oxysterol_High | | Oxysterol_Deviated |
 | LX_Receptor_physiological | Clear | LX_Receptor_pathological |
 
----
-
-### Note on results worth flagging
+**Note on results worth flagging**:
 The `physio_vs_patho_divergence` query currently returns a positive case for
 `LX_Receptor`: the physiological instance clears (`"Clear"`), the
 pathological instance of the same class does not. This is a concrete,
 queryable instance of the model's core claim — see [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md).
+
+---
