@@ -72,7 +72,7 @@ The four diagrams above are hand-built in Protégé. The following queries
 confirm the same structure holds in the asserted graph.
 
 **Which pathological nodes have no pharmacological resolution?**
-(`sparql/pathological_unresolved_nodes.rq`)
+(`sparql/pathological_resolution_status.rq`)
 
 Saturated_Fatty_Acid, Reactive_Oxygen_Species, and Liver_X_Receptor come
 back `"Unresolved"` — no downstream node in `Pharmacological` state. Statin
