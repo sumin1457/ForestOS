@@ -13,9 +13,9 @@ each is independent.
 layer (L1–L4) does that target sit in, and how many downstream nodes does
 that intervention eliminate?
 
-**Why it matters:** Turns "layer of action" from a label into a computed
-depth score — a drug acting at L3 provably clears more downstream nodes
-than one acting at L1, rather than this being asserted by hand.
+**Why it matters:** Shows the layer that drug is targeting, and turns downstream
+nodes count as a computed depth score - a drug acting at L3 provably clears 
+more downstream nodes than one acting at L1.
 
 **Reads:** `Drug_Intervention` --`perturbs_mechanistically`--> target --
 (`System_Event_Logic`|`Genetic_Logic`|`resolves_to`)*--> downstream, grouped
@@ -38,7 +38,11 @@ by drug/target/layer, counted, ordered by eliminated nodes descending.
 | LTRA | Leukotriene_asthma | 2 | 2 |
 
 **Notes on results worth flagging**: 
-Eliminated nodes count depends on the granularity of ontology. If the granularity is inconsistent, eliminated nodes count would not represent objective drug depth score. The results above show ACEi eliminated 10 nodes. This results are due to non-migration of Asthma to V2. Also linked with `deprecated_idea.md`(deprecated_idea.md).
+The eliminated-node count depends on the ontology granularity. A drug's score reflects how many downstream nodes that target has.
+This makes cross-branch comparisons misleading where granularity is inconsistent: ACEi appears to eliminate more nodes (10) than Corticosteroid (9) or Omalizumab (6), but Corticosteroid and Omalizumab act on the Asthma branch, which is still modelled under V1 and not yet migrated
+to V2's finer-grained decomposition. If the granularity is inconsistent, eliminated nodes count would not represent objective drug depth score. The apparent ranking
+reflects modelling depth, not comparative drug potency — depth scores are
+only meaningfully comparable within a single, consistently-modelled branch.
 
 ---
 
@@ -47,9 +51,9 @@ Eliminated nodes count depends on the granularity of ontology. If the granularit
 full chain of effects it triggers, including secondary effects one step
 beyond the immediate resolution?
 
-**Why it matters:** Validates that a drug's mechanism, as modelled, actually
-closes a traceable loop back through the ontology rather than terminating
-at an isolated node.
+**Why it matters:** Validates that a drug's mechanism closes a loop, unlike
+pathological state. Showing the primary and secondary results that are 
+pharmacologically intended.
 
 **Reads:** `Statin_instance` --`perturbs_mechanistically`--> target --
 `resolves_to`+ --> drugEffect --(state-change predicates)*--> mid --
@@ -131,8 +135,7 @@ back to a homeostatic state. From there, lower SFA means less Oxysterol
 synthesised, which lifts the Insig-mediated block on SCAP, reactivating
 SREBP-2 and raising LDLR transcription — which is what clears LDL and
 produces `LDL_Low` as the secondary effect downstream. So the four blank
-rows aren't failures to resolve; they're the earlier steps in the same
-chain that terminates at the one row that does.
+rows are the earlier steps in the same chain that terminates by `Resolve Effect` .
 
 ---
 
