@@ -291,9 +291,9 @@ Forest OS/
 ```
 Now:        Four states update
             SPARQL query
-            NamdeGraph architecture solving universal nodes problem
+            NamedGraph architecture solving universal nodes problem
 
-Longer-term: BFO alignment is directions I'm exploring, not committed next steps
+Longer-term: BFO alignment is a directions I'm exploring, not committed next steps
 
 ```
 
