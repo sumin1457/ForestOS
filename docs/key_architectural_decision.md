@@ -49,7 +49,7 @@ Represents a **false trigger** — a signal that structurally resembles a
 real physiological trigger closely enough that downstream machinery
 cannot distinguish it from the real one at the point of sensing.
 
-Canonical case: `Plaque_Rupture --mimics--> Injury`. The cascade fires
+Case: `Plaque_Rupture --mimics--> Injury`. The cascade fires
 exactly as it would for genuine tissue injury — `Injury` triggers the
 normal physiological clotting response `(Injury → ... → Blood_Clot)` —
 because the entry signal is indistinguishable from a real trigger. The
