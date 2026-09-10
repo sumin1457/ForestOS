@@ -76,7 +76,7 @@ confirm the same structure holds in the asserted graph.
 
 Saturated_Fatty_Acid, Reactive_Oxygen_Species, and Liver_X_Receptor come
 back `"Unresolved"` — no downstream node in `Pharmacological` state. Statin
-resolves `Oxysterol` and `LDL` but does not touch the SFA/ROS root — this
+resolves `Oxysterol` and `LDL` but does not touch the SFA/ROS root. This
 is the queryable version of "the drug closes the LDL loop; the root cause
 remains open."
 
@@ -84,36 +84,11 @@ remains open."
 (`sparql/physio_vs_patho_divergence.rq`)
 
 `LX_Receptor` (LXR) is the clearest case: the State 1 (physiological)
-instance has an outgoing `balances_to` edge — it resolves. The State 2
-(pathological) instance of the *same class* has no such edge. This is a
-formal statement of why State 2 counts as pathological rather than a label
-choice: the resolution machinery demonstrably exists (State 1 proves it),
-it's just unreachable from the State 2 entry point.
+instance has an outgoing `balances_to` edge. The State 2
+(pathological) instance of the *same class* has no such edge. This shows
+why State 2 is a `Blocked loop` and where it diverges from the physiological state.
 
 Full query definitions and result tables: [`sparql/README.md`](../sparql/README.md).
-
----
-
-## Major Findings 
-
-### 1 — The physio/patho divergence is queryable, not just diagrammed
-
-`physio_vs_patho_divergence.sparql` confirms, in the asserted graph, that
-the *same node class* (`LX_Receptor`) resolves when reached via its
-Physiological-state instance (`balances_to` present) but does not resolve
-via its Pathological-state instance (`balances_to` absent). This is a
-formal argument for why State 2 counts as pathological rather than a
-labelling choice: the resolution machinery demonstrably exists — State 1
-proves it — it's just unreachable from the State 2 entry point.
-
-### 2 — Unresolved nodes expose real gaps in drug coverage
-
-`pathological_self_resolution.sparql` shows `Saturated_Fatty_Acid`,
-`Reactive_Oxygen_Species`, and `Liver_X_Receptor` returning `"Unresolved"`
-— no downstream node in Pharmacological state. Statin resolves `Oxysterol`
-and `LDL`, but never touches the SFA/ROS root. This is the queryable
-version of the case study's own claim: *the drug closes the LDL loop; the
-root cause remains open.*
 
 ---
 
