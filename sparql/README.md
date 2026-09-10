@@ -37,6 +37,9 @@ by drug/target/layer, counted, ordered by eliminated nodes descending.
 | SABA | Beta2_Receptor_Respiratory | 1.5 | 2 |
 | LTRA | Leukotriene_asthma | 2 | 2 |
 
+**Notes on results worth flagging**: 
+Eliminated nodes count depends on the granularity of ontology. If the granularity is inconsistent, eliminated nodes count would not represent objective drug depth score. The results above show ACEi eliminated 10 nodes. This results are due to non-migration of Asthma to V2. Also linked with `deprecated_idea.md`(deprecated_idea.md).
+
 ---
 
 ## drug_resolution_chain.rq
