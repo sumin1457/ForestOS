@@ -95,8 +95,7 @@ Full query definitions and result tables: [`sparql/README.md`](../sparql/README.
 ## Reference Case: Myocardial Infarction
 
 MI was the first disease mapped and remains useful as a comparison case —
-it shows the same 4-state pattern with two simultaneous corruptions rather
-than one.
+it shows the same 4-state pattern with two simultaneous corruptions.
 
 ```
 HEALTHY RESPONSE:
