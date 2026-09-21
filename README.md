@@ -44,7 +44,7 @@ External_Trigger ──▶ triggers deviation from homeostasis
 ```
 
 Everything else in this document — the four layers, the four states, the
-named graphs, the drug taxonomy — is an instantiation of this skeleton.
+named graphs, the drug taxonomy — is based on this skeleton.
 
 ---
 
@@ -153,8 +153,7 @@ explanation available in [`python/docs/forestos_state_model_design.md`](python/d
 
 Hypercholesterolaemia is not the body malfunctioning at random — it's the
 cholesterol-sensing loop (SCAP/SREBP-2) being fed a false signal (ROS-driven
-Oxysterol) that overrides a correctly-sensed low-cholesterol state, with no
-endogenous path back.
+Oxysterol) that overrides a correctly-sensed low-cholesterol state.
 
 ```
 HEALTHY RESPONSE (State 0/1):
@@ -203,12 +202,7 @@ therapeutic_intent             — the clinical direction of that action
 └── therapeutic_suppression     — intent is to decrease a pathway/output
 ```
 
-Why both are needed separately: mechanism and intent don't always point
-the same way. Antagonising a receptor is a suppressive mechanism, and
-usually a suppressive intent too — but a drug could mechanistically
-antagonise an inhibitory receptor in order to achieve a net activating
-therapeutic intent downstream. Keeping the two properties independent lets
-the ontology represent that gap instead of collapsing it into one label.
+Why both are needed separately: mechanism and intent answer different questions — mechanism is what the drug physically does at the target; intent is the clinical goal that mechanism is being used to achieve. They're not two measurements of the same fact, so collapsing them into one label would lose real information. Keeping mechanism and intent as independent properties lets the ontology represent the means and the goal separately. 
 
 Full predicate taxonomy and the reasoning behind every top-level branch: [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md)
 
