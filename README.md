@@ -137,13 +137,6 @@ Pharmacological graph: Nodes with hasSystemState: "Pharmacological" entry +
 
 ```
 
-A single SPARQL query can enter through a disease context graph, traverse
-universal biology in the default graph, and terminate in a
-location-specific consequence — without duplicating a single node.
-
-Adding a new disease means adding its entry point. Existing location
-contexts are inherited automatically.
-
 Python script for Named graph is in [`python/forestos_state_model_v2.py`](python/forestos_state_model_v2.py), 
 explanation available in [`python/docs/forestos_state_model_design.md`](python/docs/forestos_state_model_design.md).
 
@@ -202,7 +195,7 @@ therapeutic_intent             — the clinical direction of that action
 └── therapeutic_suppression     — intent is to decrease a pathway/output
 ```
 
-Why both are needed separately: mechanism and intent answer different questions — mechanism is what the drug physically does at the target; intent is the clinical goal that mechanism is being used to achieve. They're not two measurements of the same fact, so collapsing them into one label would lose real information. Keeping mechanism and intent as independent properties lets the ontology represent the means and the goal separately. 
+Why both are needed separately: mechanism and intent answer different questions — mechanism is what the drug physically does at the target; intent is the clinical goal that mechanism is being used to achieve. Keeping mechanism and intent as independent properties lets the ontology represent the means and the goal separately. 
 
 Full predicate taxonomy and the reasoning behind every top-level branch: [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md)
 
@@ -298,7 +291,7 @@ Longer-term: BFO alignment is a directions I'm exploring, not committed next ste
 Built by a 3rd year MPharm student (2026/27) at the University of Manchester
 exploring biomedical knowledge architecture. The project started from a 
 simple observation: biological cascades aren't flat lists of facts — there's 
-real structure underneath them, which node causes which, at what layer, resolved
+real multi-dimensional structure underneath them, which node causes which, at what layer, resolved
 or not. Forest OS is an attempt to actually draw that structure out and 
 put it into a form a query can traverse.
 
