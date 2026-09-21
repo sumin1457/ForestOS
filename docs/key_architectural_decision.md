@@ -1,4 +1,4 @@
-This document explains the predicates used in the ontology. Since the state model is built on both a data property (`hasSystemState`) and state-specific predicates, understanding these predicates is beneficial for interpreting the key findings and architectural decisions below. This document also covers major findings and the architectural decisions themselves.
+This document explains the predicates used in the ontology. Since the state model is built on both a data property (`hasSystemState`) and state-specific predicates, understanding these predicates is helpful for interpreting the key findings and architectural decisions below. This document also covers major findings and the architectural decisions themselves.
 
 ---
 
@@ -35,8 +35,7 @@ owl:topObjectProperty
 ### Genetic_Logic
 Models epigenetic/transcriptional detail (`activates_transcription`,
 `is_translated_into`, `represses_transcription`). Present in the ontology
-but not yet used to the depth this level of granularity would support —
-kept in place for when a disease case study actually needs it.
+but not yet used to the depth this level of granularity.
  
 ### Layer_Transition_Logic — `deviates_into`
 Marks the transition from a normal physiological state to a pathological
@@ -55,15 +54,14 @@ normal physiological clotting response `(Injury → ... → Blood_Clot)` —
 because the entry signal is indistinguishable from a real trigger. The
 pathology isn't in the cascade responding; it's in what triggered it.
 Where this response then fails to resolve (chronic re-triggering, no
-clearance mechanism engaging) is where `Blood_Clot --deviates_into--> Vascular_Blockage` enters — the separate, second failure: not a false
-signal anymore, but the loop itself failing to close.
+clearance mechanism engaging) is where `Blood_Clot --deviates_into--> Vascular_Blockage` enters — the separate, second failure.
 
 `mimics` and `deviates_into` are often present together at a State 2
 entry point (false trigger + broken brake, per the README's State 2
 description) but are separate predicates because they describe different
 failure mechanisms — one at the input (a fake signal fools the sensor),
 one at the resolution (a real signal is sensed correctly but the
-correction never engages) — not two strengths of the same failure.
+correction never engages).
  
 ### System_Event_Logic
 The generic cascade machinery — activation, causation, suppression,
@@ -91,18 +89,16 @@ because it makes the *outcome* directly queryable — a query walking
 `balances_to` edges returns the actual resolved state at each step, not
 just the name of the problem being solved. This is what
 `physiological_self_resolution.rq` and `physio_vs_patho_divergence.rq`
-depend on: without `balances_to` pointing at a result node, there would
-be nothing on the Physiological-state instance to compare against the
-Pathological-state instance's absence of resolution.
+depend on: without `balances_to` pointing at a result node, it would be
+impossible to compare the pathological resolution node against the
+Pathological-state instance.
  
 ### System_Regulation_Logic — `feedbacks`, `switches_on`, `switches_off`
 `switches_on`/`switches_off` links Regulatory switch and Sensor. `feedbacks` is
 separate — it represents the closed-loop signal from an Effector back to
 its originating Regulatory_Switch, and is what makes negative/positive
-feedback chains queryable directly, e.g.
-`LDL_Receptor_Low --feedbacks--> Cholesterol_ER_Low_instance`. Most
-useful for showing Homeostatic states specifically, since
-a functioning feedback edge is close to the definition of a closed loop.
+feedback chains queryable directly in the homeostatic state, e.g.
+`LDL_Receptor_Low --feedbacks--> Cholesterol_ER_Low_instance`.
  
 ### Clinical_Logic
 Bridges `Clinical_Framing` (the disease label) to `Biomedical_Layer`
@@ -141,6 +137,9 @@ the body's own machinery.
 ## 2. Major Finding
 
 ### The universal-node problem: same Tbox class, divergent-point instances
+
+The four-state model itself exists to capture disease as a dynamic process. 
+Implementing that model then surfaced a structural problem worth documenting on its own:
 
 The v1 tension "shared universal nodes lose disease context" (see
 `docs/archive/v1_notes.md`) is resolved not by full named-graph separation
