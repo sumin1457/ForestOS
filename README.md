@@ -15,7 +15,7 @@ machinery it deviates from.
 
 **Two companion docs go deeper**: [`docs/state_model.md`](docs/state_model.md) 
 works through the four-state model on a real case study, with diagrams and 
-SPARQL-verified results. [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) explains the predicate design and named-graph mechanics that make the model queryable — including how the ontology handles a universal biological process (like a receptor) needing to behave differently across disease states.
+SPARQL-verified results. [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) explains the predicate design and named-graph mechanics that make the model queryable — including how the ontology handles a universal biological process needing to behave differently across disease states.
 
 ---
 
