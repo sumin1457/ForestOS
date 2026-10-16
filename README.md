@@ -1,25 +1,27 @@
 # Forest OS
-### A Biomedical Knowledge Architecture for Disease-as-Deviation Modelling
+### A Biomedical Knowledge Architecture for Modelling Biological Regulation, Disease and Pharmacological Intervention
 
-Built in OWL/Protégé. Queried via SPARQL. Named graphs built and queried via Python + GraphDB.
+Biological systems are not simply collections of molecules, pathways and disease labels. They are interconnected regulatory-harmonised systems, where the same biological processes can behave differently depending on physiological conditions, pathological disturbances and pharmacological intervention. 
+
+### Forest OS began with a question: how can we represent that complexity as structured, queryable structure?
+
+
+I started this independent project to explore how biomedical ontologies could connect different perspectives on disease — from underlying molecular mechanisms and regulatory processes to clinical manifestations and therapeutic interventions. 
+
+Using OWL, Protégém and SPARQL, I’ve developed a prototype that organises biological knowledge through a shared conceptual architecture, while distinguishing how regulatory behaviour is represented across different contexts. 
+
+The project is built around two connected challenges:
+
+- Representing biological complexity: How can clinical, molecular, regulatory and pharmacological perspectives be organised within a coherent knowledge model?
+- Representing biological change: How far can an ontology capture context-dependent regulatory behaviour, and what additional modelling approaches might be needed to represent dynamnics?
+
+The second question emerged directly from building the first version of Forest OS. While OWL/RDF provides a powerful way to define biological entities and relationships, representing how a regulatory system changes over time has proved more challenging. 
+
+This has led me to explore whether qualitative dynamic models, could complement ontology-based knowledges representation. 
 
 ---
 
-## What This Is
-
-Forest OS models disease as **location-specific deviation from a universal
-homeostatic baseline**. Rather than listing pathological facts of disease, 
-ForestOS aims to translate dynamic biological physiology into queryable structure
-— where a disease's mechanism can be traced and compared against the healthy
-machinery it deviates from. 
-
-**Two companion docs go deeper**: [`docs/state_model.md`](docs/state_model.md) 
-works through the four-state model on a real case study, with diagrams and 
-SPARQL-verified results. [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) explains the predicate design and named-graph mechanics that make the model queryable — including how the ontology handles a universal biological process needing to behave differently across disease states.
-
----
-
-## Conceptual Framework
+## How Forest OS Is Structured
 
 The ontology separates five ontological modes as five relational roles around a single biomedical layer:
 
@@ -43,8 +45,7 @@ External_Trigger ──▶ triggers deviation from homeostasis
                       (e.g. allergen exposure, plaque rupture)
 ```
 
-Everything else in this document — the four layers, the four states, the
-named graphs, the drug taxonomy — is based on this skeleton.
+Everything else in this document is based on this skeleton.
 
 ---
 
@@ -241,6 +242,18 @@ Forest OS/
 - The Python named-graph builder was developed with AI assistance; the ontology design, predicate taxonomy, and state-model architecture are independently authored.
 
 ---
+
+## How to Read
+
+Forest OS models disease as **location-specific deviation from a universal
+homeostatic baseline**. Rather than listing pathological facts of disease, 
+ForestOS aims to translate dynamic biological physiology into queryable structure
+— where a disease's mechanism can be traced and compared against the healthy
+machinery it deviates from. 
+
+**Two companion docs go deeper**: [`docs/state_model.md`](docs/state_model.md) 
+works through the four-state model on a real case study, with diagrams and 
+SPARQL-verified results. [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) explains the predicate design and named-graph mechanics that make the model queryable — including how the ontology handles a universal biological process needing to behave differently across disease states.
 
 ## How to Read
 
