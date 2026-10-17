@@ -3,27 +3,58 @@
 
 Biological systems are not simply collections of molecules, pathways and disease labels. They are interconnected regulatory-harmonised systems, where the same biological processes can behave differently depending on physiological conditions, pathological disturbances and pharmacological intervention. 
 
-### Forest OS began with a question: how can we represent that complexity as structured, queryable structure?
-
+**Forest OS began with a question: how can we represent that complexity as structured, queryable structure?**
 
 I started this independent project to explore how biomedical ontologies could connect different perspectives on disease — from underlying molecular mechanisms and regulatory processes to clinical manifestations and therapeutic interventions. 
 
-Using OWL, Protégém and SPARQL, I’ve developed a prototype that organises biological knowledge through a shared conceptual architecture, while distinguishing how regulatory behaviour is represented across different contexts. 
+Using OWL, Protégé and SPARQL, I’ve developed a prototype that organises biological knowledge through a shared conceptual architecture, while distinguishing how regulatory behaviour is represented across different contexts. 
 
 The project is built around two connected challenges:
 
 - Representing biological complexity: How can clinical, molecular, regulatory and pharmacological perspectives be organised within a coherent knowledge model?
 - Representing biological change: How far can an ontology capture context-dependent regulatory behaviour, and what additional modelling approaches might be needed to represent dynamnics?
 
-The second question emerged directly from building the first version of Forest OS. While OWL/RDF provides a powerful way to define biological entities and relationships, representing how a regulatory system changes over time has proved more challenging. 
+The second question emerged directly from building the first version of Forest OS. While OWL/RDF provides a powerful way to define biological entities and relationships, representing how a biological entity changes over time has proved more challenging. 
 
-This has led me to explore whether qualitative dynamic models, could complement ontology-based knowledges representation. 
+This has led me to explore whether qualitative dynamic models could complement ontology-based knowledges representation. 
 
 ---
 
 ## How Forest OS Is Structured
 
-The ontology separates five ontological modes as five relational roles around a single biomedical layer:
+Forest OS is built around three complementary dimensions: **how biological knowledge is viewed, how mechanisms are organised, and how regulatory behaviour differs across contexts.**
+
+These dimensions serve different purposes. The conceptual framework **connects** different perspectives on disease and treatment. The biological layers **organise** the mechanisms themselves. The four-state model then allows those mechanisms to be **examined** under different regulatory conditions. 
+
+**1. A Multi-Perspective Conceptual Framework**
+
+Forest OS begins with a distinction between biological regulation and the clinical labels human assign to it. 
+
+Biological systems operate through interconnected regulatory processes. When these processes deviate from homeostatic regulation, the resulting conditions may be recognised and classified clinically as particular diseases. In Forest OS, the disease label is therefore treated as a form of **Clinical Framing**, rather than as the biological mechanism itself.
+
+This distinction shapes the ontology’s conceptual architecture. 
+
+At its centre is the Biomedical Layer, which represents the biological entities, processes and regulatory relationships underlying a condition. Four other perspectives connect to this mechanistic backbone, each with a distinct role: 
+
+| Perspective | Role in the architecture |
+|---|---|
+| Clinical Framing | Assigns a human-defined disease classification to a biological condition |
+| Biomedical Layer | Represents the underlying biological mechanisms and regulatory processes |
+| Clinical Manifestation | Captures observable consequences of those processes, such as symptoms and biomarkers |
+| Therapeutic Perturbation | Represents pharmacological interventions acting on the biological system |
+| External Trigger | Represents factors that initiate or contribute to a regulatory disturbance |
+
+These perspectives are connected, but they are **not interchangeable descriptions of a disease**.
+
+A clinical label classifies a condition; a biological mechanism explains how it arises or operates; a clinical manifestation describes what can be observed; and an intervention acts on the underlying system. 
+
+The purpose of this separation is to preserve these different relationships without collapsing them into a single disease-centred representation. 
+
+By keeping theses perspectives distinct and connecting them through explicitly defined relationships, Forest OS aims to support queries that move between clinical classifications, biological mechanisms, observable consequences and pharmacological interventions without conflating their different roles. 
+
+This is particularly important when different diseases share parts of the same underlying biological pathways. The architecture is designed to reuse commmon mechanisms while preserving the disease-specific context in which they are represented, allowing SPARQL queries to explore both shared biology and differences between conditions. 
+
+Conceptual Framework at a glance:
 
 ```
 Clinical_Framing  ────────────────  human-imposed disease label
@@ -44,163 +75,68 @@ Biomedical_Layer (Homeostatic & Physiological)  ──▶  Biomedical_Layer (Pat
 External_Trigger ──▶ triggers deviation from homeostasis
                       (e.g. allergen exposure, plaque rupture)
 ```
-
-Everything else in this document is based on this skeleton.
-
 ---
 
-## Four-Layer Biological Model
+**2. Organising the Biomedical Layer**
 
-Every biological node (from `Biomedical_Layer`) is classified into one of
-four layers:
+Within the Biomedical Layer, Forest OS uses a layered structure to organise different aspects of biological regulation. 
 
-| Layer | Domain | Role |
+| Layer | Focus | Examples |
 |---|---|---|
-| L4 — Genetic | Predispositions, mutations, epigenetic state | Starting conditions |
-| L3 — Immune | Th2, IgE signalling, dendritic cell activity | Regulatory immune machinery |
-| L2 — Biochemical | Histamine, prostaglandins, cAMP, NO, PGI2 | Molecular mediators |
-| L1 — Infrastructure | Bronchoconstriction, ischaemia, atherosclerosis | Tissue-level consequence |
+| L4 — Genetic | Genetic and epigenetic factors | Predispositions, mutations, epigenetic states | 
+| L3 — Immune | Immune signalling and regulation | Th2, IgE signalling, dendritic cell activity | 
+| L2 — Biochemical | Molecular signals and mediators | Histamine, prostaglandins, cAMP, NO, PGI2 | 
+| L1 — Infrastructure | Tissue-level processes and consequences | Bronchoconstriction, ischaemia, atherosclerosis | 
 
+The model also includes **L1.5 enzyme and receptor categories**, providing additional distinctions for molecular targets such as ACE, COX, HMG-CoA reductase and specific receptors. 
 
-Extra Layers:
-| Layer | Domain | Role |
-|---|---|---|
-| L1.5 — Enzyme | ACE, COX, HMG-CoA | Protein-level |
-| L1.5 — Receptor | AT1, H1, LDL, Muscarinic | Reacts to molecular signal |
+This structure serves three purposes: it helps classify and locate biological nodes, provides a startring point for exploring the **structural depth of pharmacological interventions**, and supports SPARQL queries across different biological categories and relationships.
 
-Drug intervention depth is computed from layer of action. A drug acting at
-L3 suppresses more downstream nodes and is structurally closer to the
-disease root than one acting at L1 — this is computed directly by
+Asthma prototype example: []()
+
 [`sparql/drug_layer_depth.rq`](sparql/drug_layer_depth.rq).
 
 ---
 
-## The Four States
+**3. Four System States**
 
-Four states underlie the entire system. States 0 and 1 both describe the
-**healthy body** — the same organism, doing what it's built to do, whether
-resting or responding to a real stimulus. State 2 is the only state where
-something has actually gone wrong. State 3 shows how a drug resolves the
-State 2 deviation.
+The next challenge I encountered was that **the same biologcial component can behave differently depending on the condition of the system**. A regulatory pathway may successfully restore balance under physiological conditions, become disrupted in disease, or respond differently following pharmacological intervention. 
 
-```
-State 0 — Homeostatic (Negative Feedback, Loop Closed)
-  A Regulatory_Switch has deviated from its setpoint, a Sensor has detected
-  it, and the resulting Effector response is actively correcting it back to
-  baseline. Ordinary, continuous self-correction. Regulatory machinery is
-  engaged and succeeding.
+To capture these differences, Forest OS uses four snapshots of biological context:
 
-State 1 — Physiological (Emergency Signal, Loop Still Closes)
-  A larger-magnitude or acute trigger arrives — still using the same
-  Sensor–Switch–Effector architecture as State 0, just responding to a
-  bigger disturbance. The correction pathway still successfully closes the loop.
+| State | Context | Interpretation |
+|---|---|---|
+| State 0 — Homeostatic | Ongoing baseline regulation | Endogenous regulatory processes maintain or restore balance |
+| State 1 - Physiological | Emergency Signal | Still under homeostatic response, but regulatory response addresses a disturbance through endogenous mechanism. State 1 successfully restores back to state 0 |
+| State 2 - Pathological | Disrupted | False trigger or broken break (loss of certain node) cause deviation from healthy state |
+| State 3 - Pharmacological | Drug-modified state | An intervention changes the system’s behaviour or outcomes, without necessarily restoring normal regulation (S0) |
 
-State 2 — Pathological (Loop Blocked)
-  The same architecture is engaged, but the loop fails to close, via one
-  of two structural mechanisms:
-    False trigger  → a competing signal overrides the correct one
-    Broken brake   → chronic suppression of a regulatory node prevents
-                      the correction from ever engaging
-  No resolution loop. The switch stays deviated indefinitely.
+These snapshots allow SPARQL queries to compare **which nodes and relationships remain shared, where regulatory behaviour diverges, and how downstream consequences differe between states.**
 
-State 3 — Pharmacological (Loop Closed by External Intervention)
-  The endogenous loop remains blocked (State 2's cause is still present),
-  but an external agent closes the loop by a different route — typically
-  bypassing the blocked step rather than repairing it.
-```
+This is my approach to representing aspects of dynamic biological behaviour within an ontology. It captures differences between selected states/condtions, although it does not yet simulate how the system moves between them over time.
 
-Worked example for all four states (Hypercholesterolaemia), with diagrams
-and SPARQL-verified results: [`docs/state_model.md`](docs/state_model.md).
+For a more detailed explanation, including worked examples, see : [`docs/state_model.md`](docs/state_model.md).
 
 ---
 
 ## Named Graph Architecture
 
-```
-Default graph:        complete ontology (Protégé export) — Biomedical layer,
-                       clinical framing, clinical manifestation (symptoms),
-                       therapeutic perturbation (drugs). All nodes, all
-                       asserted edges.
+To build on the four-state model, I wrote a Python script that uses state membership and state-specific relationships to construct separate RDF named graphs for each system state. 
 
-Homeostatic graph:    Nodes with hasSystemState: "Homeostatic" entry +
-                      data property preserved.
+The aim was to create **queryable snapshots of the same underlying biological structure**, making it easier to compare shared nodes, context-dependent relationships and downstream consequences across states using SPARQL. 
 
-Physiological graph:  Nodes with hasSystemState: "Physiological" entry +
-                      restores/balances_to/balances edges (resolution branch) +
-                      data property assertion.
-
-Pathological graph:   Nodes with hasSystemState: "Pathological" entry +
-                       mimics/deviates_into (signal hijacking + transition) +
-                      data property assertion.
-
-Pharmacological graph: Nodes with hasSystemState: "Pharmacological" entry +
-                       resolves_to edge + data property assertion.
-
-```
+This Named graph currently works as a ‘filtered view’ in SPARQL query. 
 
 Python script for Named graph is in [`python/forestos_state_model_v2.py`](python/forestos_state_model_v2.py), 
 explanation available in [`python/docs/forestos_state_model_design.md`](python/docs/forestos_state_model_design.md).
 
 ---
 
-## State Graph Builder: Hypercholesterolaemia as a Case Study
-
-Hypercholesterolaemia is not the body malfunctioning at random — it's the
-cholesterol-sensing loop (SCAP/SREBP-2) being fed a false signal (ROS-driven
-Oxysterol) that overrides a correctly-sensed low-cholesterol state.
-
-```
-HEALTHY RESPONSE (State 0/1):
-  Cholesterol_ER drops → SCAP/SREBP-2 activate → LDLR transcription rises
-  → LDL cleared → Cholesterol_ER restored.
-  Acute SFA surge → Oxysterol rises → SREBP-2 transiently shut down → SFA
-  cleared via LXR → Oxysterol falls → SREBP-2 reactivates → LDL cleared.
-  Two-phase, but resolves.
-
-PATHOLOGICAL DEVIATION (State 2):
-  Chronic high SFA → ROS-driven Oxysterol → overrides SREBP-2 regardless
-  of the correctly-sensed low-cholesterol signal, and LXR's balancing
-  response no longer clears it → no endogenous path back.
-
-PHARMACOLOGICAL CLOSURE (State 3):
-  Statin inhibits HMG-CoA Reductase directly, depleting the cholesterol
-  pool that feeds Oxysterol → SREBP-2 reactivates → LDL clears, without
-  ROS or SFA ever being addressed. The drug closes the LDL loop; the root
-  cause remains open.
-```
-
-Full diagrams and the SPARQL queries that verify this (including where the
-model shows the same node class resolving in State 1 but not State 2) are
-in [`docs/state_model.md`](docs/state_model.md).
-
-
-MI remains mapped as the earlier reference case and is included there for
-comparison.
 
 ---
 
-## Pharmacological Property Hierarchy
 
-Drug action is modelled at two levels: mechanism (what happens at the
-target) and intent (why it's being done, clinically).
 
-```
-perturbs_mechanistically      — the physical/molecular action on a target
-├── agonises_receptor          — binds and activates a receptor
-├── antagonises_receptor       — binds and blocks a receptor
-├── downregulates               — reduces expression/activity of a target
-└── upregulates                 — increases expression/activity of a target
-
-therapeutic_intent             — the clinical direction of that action
-├── therapeutic_activation      — intent is to increase a pathway/output
-└── therapeutic_suppression     — intent is to decrease a pathway/output
-```
-
-Why both are needed separately: mechanism and intent answer different questions — mechanism is what the drug physically does at the target; intent is the clinical goal that mechanism is being used to achieve. Keeping mechanism and intent as independent properties lets the ontology represent the means and the goal separately. 
-
-Full predicate taxonomy and the reasoning behind every top-level branch: [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md)
-
----
 
 ## Architecture
 
@@ -231,30 +167,13 @@ Forest OS/
 
 **NOTE** 
 
-- Asthma: mapped under V1 architecture. Drug-perturbation and 
-  symptom-traversal queries work identically (proving those query 
-  patterns generalize across versions). Not yet migrated to V2's 
-  hasSystemState/named-graph model — asthma's immune cascade doesn't 
+- Asthma: mapped under V1 architecture. Not yet migrated to V2's hasSystemState/named-graph model — asthma's immune cascade doesn't 
   cleanly decompose into Homeostatic/Physiological/Pathological the 
-  same way metabolic/cardiac feedback loops do, and resolving that 
-  mismatch is next on the roadmap.
+  same way metabolic/cardiac feedback loops do.
 
-- The Python named-graph builder was developed with AI assistance; the ontology design, predicate taxonomy, and state-model architecture are independently authored.
+- The Python named-graph builder was developed with AI assistance
 
 ---
-
-## How to Read
-
-Forest OS models disease as **location-specific deviation from a universal
-homeostatic baseline**. Rather than listing pathological facts of disease, 
-ForestOS aims to translate dynamic biological physiology into queryable structure
-— where a disease's mechanism can be traced and compared against the healthy
-machinery it deviates from. 
-
-**Two companion docs go deeper**: [`docs/state_model.md`](docs/state_model.md) 
-works through the four-state model on a real case study, with diagrams and 
-SPARQL-verified results. [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) explains the predicate design and named-graph mechanics that make the model queryable — including how the ontology handles a universal biological process needing to behave differently across disease states.
-
 ## How to Read
 
 ### Prerequisites
@@ -289,11 +208,9 @@ SPARQL-verified results. [`docs/key_architectural_decision.md`](docs/key_archite
 ## Roadmap
 
 ```
-Now:        Four states update
-            SPARQL query
-            NamedGraph architecture solving universal nodes problem
+OBO Alignment
+Python RDFlib
 
-Longer-term: BFO alignment is a directions I'm exploring, not committed next steps
 
 ```
 
