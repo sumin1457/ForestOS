@@ -3,7 +3,7 @@
 
 Biological systems are not simply collections of molecules, pathways and disease labels. They are interconnected regulatory-harmonised systems, where the same biological processes can behave differently depending on physiological conditions, pathological disturbances and pharmacological intervention. 
 
-**Forest OS began with a question: how can we represent that complexity as structured, queryable structure?**
+**Forest OS began with a question: how can we represent that complexity as structured, queryable knowledge?**
 
 I started this independent project to explore how biomedical ontologies could connect different perspectives on disease — from underlying molecular mechanisms and regulatory processes to clinical manifestations and therapeutic interventions. 
 
@@ -131,13 +131,17 @@ Python script for Named graph is in [`python/forestos_state_model_v2.py`](python
 explanation available in [`python/docs/forestos_state_model_design.md`](python/docs/forestos_state_model_design.md).
 
 ---
+## Current Case Studies
 
+**Hypercholesterolaemia** is the most developed case study. It explores cholesterol regulation, pathological disturbances and pharmacologial intervention within the four-context framework. 
+
+**Myocardial infarction** is included as an earlier reference case, while **asthma** was explored under a previous version of the architecture and has not yet been fully migrated to the current state-model implementation. 
+
+Some mechanistic relationships in these case studies remain expolratory modelling hypotheses and require further literature-based validation. 
+
+The current SPAQRL queires demonstrate what can be retreived from the asserted model. [`sparql/README.md`](sparql/README.md)
 
 ---
-
-
-
-
 ## Architecture
 
 ```
@@ -160,20 +164,6 @@ Forest OS/
 
 ---
 
-## Current Coverage
-
-- **2 diseases mapped:** 2 diseases mapped under the current architecture (V2); a third (Asthma) under migration from V1 — see note below.
-- **SPARQL query validated** [`sparql/README.md`](sparql/README.md)
-
-**NOTE** 
-
-- Asthma: mapped under V1 architecture. Not yet migrated to V2's hasSystemState/named-graph model — asthma's immune cascade doesn't 
-  cleanly decompose into Homeostatic/Physiological/Pathological the 
-  same way metabolic/cardiac feedback loops do.
-
-- The Python named-graph builder was developed with AI assistance
-
----
 ## How to Read
 
 ### Prerequisites
@@ -210,7 +200,6 @@ Forest OS/
 ```
 OBO Alignment
 Python RDFlib
-
 
 ```
 
