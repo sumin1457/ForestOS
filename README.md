@@ -20,7 +20,7 @@ This has led me to explore whether qualitative dynamic models could complement o
 
 ---
 
-## How Forest OS Is Structured
+## How Forest OS is Structured
 
 Forest OS is built around three complementary dimensions: **how biological knowledge is viewed, how mechanisms are organised, and how regulatory behaviour differs across contexts.**
 
@@ -106,7 +106,7 @@ To capture these differences, Forest OS uses four snapshots of biological contex
 
 | State | Context | Interpretation |
 |---|---|---|
-| State 0 — Homeostatic | Ongoing baseline regulation | Endogenous regulatory processes maintain or restore balance |
+| State 0 - Homeostatic | Ongoing baseline regulation | Endogenous regulatory processes maintain or restore balance |
 | State 1 - Physiological | Emergency Signal | Still under homeostatic response, but regulatory response addresses a disturbance through endogenous mechanism. State 1 successfully restores back to state 0 |
 | State 2 - Pathological | Disrupted | False trigger or broken break (loss of certain node) cause deviation from healthy state |
 | State 3 - Pharmacological | Drug-modified state | An intervention changes the system’s behaviour or outcomes, without necessarily restoring normal regulation (S0) |
@@ -192,16 +192,6 @@ Forest OS/
    the default graph — see
    [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) §2 for what
    it does and why.
-
----
-
-## Roadmap
-
-```
-OBO Alignment
-Python RDFlib
-
-```
 
 ---
 
