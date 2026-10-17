@@ -1,8 +1,14 @@
-This document explains the predicates used in the ontology. Since the state model is built on both a data property (`hasSystemState`) and state-specific predicates, understanding these predicates is helpful for interpreting the key findings and architectural decisions below. This document also covers major findings and the architectural decisions themselves.
+# Architectural Decisions and Property Semantics
+
+This document explains the modelling decisions behind Forest OS, especially how it represents **shared biological mechanims with context-dependent relationships**. It also serves as a reference for the ontology’s object property taxonomy and the Python-generated state-specific named graphs. 
+
+Forest OS is an exploratory knowledge representation project. The relationship described here are modelled assertions, not automatically validated biological mechanisms. 
 
 ---
 
-## 1. Object Property Taxonomy
+## 1. The central modelling problem: shared biology, different contexts
+
+The four-state model was developed to capture selected 
  
 Every predicate used elsewhere in this document sits inside one of four
 top-level branches under `owl:topObjectProperty`. 
