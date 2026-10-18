@@ -6,12 +6,24 @@ Forest OS is an exploratory knowledge representation project. The relationship d
 
 ---
 
-## 1. The central modelling problem: shared biology, different contexts
+## 1. Connecting conceptual perspectives through object properties 
 
-The four-state model was developed to capture selected 
- 
-Every predicate used elsewhere in this document sits inside one of four
-top-level branches under `owl:topObjectProperty`. 
+Forest OS separates five conceptual persepctives arounda a sharted biological backbone: 
+
+- Clinical_Framing — disease classifications and associated clinical descriptions
+- Biomedical_Layer — biologiccal entities, mechanisms and regulatory relationships
+- Clinical_Manifestation — observable consequences, symptoms and biomarkers
+- Therapeutic_Perturbation — interventions acting on biological mechanisms
+- External_Trigger — initiating or contributing factors in the mode
+
+**Architectural decision:** these perspectives are distinguished conceptually but connected through explicitly named object properties. The predicates specify **what kind of relationship** links them. 
+
+**Cross-perspective relationships**
+
+| Relationship | Connection represented | Why it is distinguished |
+| --- | --- | --- |
+| `has_etiology` | `Clinical_Framing` → `Biomedical_Layer` (representing core cause of the named disease) | Associates a clinical classification with its modelled causal context |
+| `has_pathophysiology`
  
 ```
 owl:topObjectProperty
