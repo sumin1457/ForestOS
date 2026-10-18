@@ -92,9 +92,7 @@ The model also includes **L1.5 enzyme and receptor categories**, providing addit
 
 This structure serves three purposes: it helps classify and locate biological nodes, provides a startring point for exploring the **structural depth of pharmacological interventions**, and supports SPARQL queries across different biological categories and relationships.
 
-Asthma prototype example: []()
-
-[`sparql/drug_layer_depth.rq`](sparql/drug_layer_depth.rq).
+**For more detailed explanation**: Forest OS uses explicitly defined object porperties both to connect its five conceptual perspectives and to represent biological mechanisms within the shared Biomedical Layer. The rationale behind the property taxonomy, state-specific instances and named graph design is documented in [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md).
 
 ---
 
@@ -189,9 +187,7 @@ Forest OS/
    `UPDATE_ENDPOINT` to match your repository's URL.
 3. Run the script. It rebuilds the four state named graphs
    (Homeostatic / Physiological / Pathological / Pharmacological) from
-   the default graph — see
-   [`docs/key_architectural_decision.md`](docs/key_architectural_decision.md) §2 for what
-   it does and why.
+   the default graph.
 
 ---
 
