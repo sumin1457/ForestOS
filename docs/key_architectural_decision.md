@@ -8,7 +8,7 @@ Forest OS is an exploratory knowledge representation project. The relationship d
 
 ## 1. Connecting conceptual perspectives through object properties 
 
-Forest OS separates five conceptual persepctives arounda a sharted biological backbone: 
+Forest OS separates five conceptual perspectives around a shared biological backbone: 
 
 - Clinical_Framing — disease classifications and associated clinical descriptions
 - Biomedical_Layer — biologiccal entities, mechanisms and regulatory relationships
@@ -19,11 +19,41 @@ Forest OS separates five conceptual persepctives arounda a sharted biological ba
 **Architectural decision:** these perspectives are distinguished conceptually but connected through explicitly named object properties. The predicates specify **what kind of relationship** links them. 
 
 **Cross-perspective relationships**
-
 | Relationship | Connection represented | Why it is distinguished |
 | --- | --- | --- |
 | `has_etiology` | `Clinical_Framing` → `Biomedical_Layer` (representing core cause of the named disease) | Associates a clinical classification with its modelled causal context |
-| `has_pathophysiology`
+| `has_pathophysiology` | `Clinical_Framing` → `Biomedical_Layer` (To core pathophysiological nodes) | Associates a clinical classification with its core pathological node |
+| `has_manifestation` | `Clinical_Framing` → `Clinical_Manifestation` | Linking a clinical classification with symptoms |
+| `leads_to` | `Biomedical_Layer` → `Clinical_Manifestation` | Records a mechanistic connection to an observable consequence |
+| `perturbs_mechansitically` and subproperties | `Therapeutic_Perturbation` → `Biomedical_Layer` | Connects medication to its molecular/biological action |
+| `triggers` | `External_Trigger` → `Biomedical_Layer` | Locates a contributing factor to the relative within biological system |
+
+**Example**: `MI_instance` - `has_manifestation` → `Fatigue_instance` is a clinical association, whereas `Epithelial_Damage` -`leads_to` → `Cough_instance` connects a biological process to a manifestation. 
+
+**Why this matters for querying**. A SPARQL query can follow a clinical entry point into a biological pathway, then reach manifestations or drug targets through relationships with different meanings. 
+
+**2. Relationships within the Biomedical Layer**
+
+A second design decision is to **distinguish different kinds of biological relationships within the shared backbone**. Biological layers (L4 Genetic, L3 Immune, L2 Biochemical, L1 Infrastructure, with L1.5 enzyme/receptor categoreis) describe **what kind of node is being represented and its modelling position**. Object properties descrie how nodes are connected. 
+
+The current taxonomy groups biological predicates as follows:
+| Property family | Predicates in the supplied taxonomy | Intended modelling role |
+| --- | --- | --- |
+| `Genetic_Logic` | `activates_transcription`, `is_translated_into`, `represses_transcription` | Transcriptional/translation-related assertions; generated to describe epigenetic, but less developed in current examples. |
+| `System_Event_Logic` | `activates`, `causes`, `suppresses`, `requires`, `binds`, `increases`,`inhibits` | General events and mechanisms used across context. |
+| `System_Regulation_Logic` | `feedbacks`, `switches_on`, `switches_off` | Regulatory switching and feedback relationships. `feedbacks` show how the loop closed in state 0/1. |
+| `System_Recovery_Logic` | `balances`, `balances_to`, `restores` | Represent outcomes of regulation, only used in state 1. |
+| `Signal_Semantics_Logic` | `mimics` | Bridge between state 2 (pathological) to state 0/1 (homeostatic/physiological). It models a false-trigger or analogous-trigger relationship.|
+| `Layer_Transition_Logic` | `deviates_into` | Marks the transition from state 0/1 to state 2(pathological). It is a transtion point from normal state to pathological state. |
+| `System_Progression_Logic` | `progresses_to` | Marks a duration between two points. It involves ‘time’ between the nodes. |
+
+**Distinctions that affect interpretation**
+- **balances vs balances_to:** in the current design, `balances` points to what is being corrected, while `balances_to` points to a represented outcome. For example, `LDL_Receptor_High_instance` -`balances_to`→ `LDL_Low_instance` makes that outcome node directly retrievable. The exact boundary of `restores` is a relative to these properties.
+- **mimics vs deviates_into**: `mimics` describes an false/analogous trigger, while `deviates_into` marks a pathological deviation. `mimics` serves a transition from pathological node to homeostatic/physiological node while `deviates_into` marks a transition from physiological node to pathological node.
+
+
+
+
  
 ```
 owl:topObjectProperty
