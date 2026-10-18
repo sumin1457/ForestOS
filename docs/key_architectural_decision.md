@@ -26,6 +26,7 @@ Forest OS separates five conceptual perspectives around a shared biological back
 | `has_manifestation` | `Clinical_Framing` → `Clinical_Manifestation` | Linking a clinical classification with symptoms |
 | `leads_to` | `Biomedical_Layer` → `Clinical_Manifestation` | Records a mechanistic connection to an observable consequence |
 | `perturbs_mechansitically` and subproperties | `Therapeutic_Perturbation` → `Biomedical_Layer` | Connects medication to its molecular/biological action |
+| `therapeutic_intent` | `Therapeutic_Perturbation` → `Biomedical_Layer` | It bridges the intended purpose of the medication. |
 | `triggers` | `External_Trigger` → `Biomedical_Layer` | Locates a contributing factor to the relative within biological system |
 
 **Example**: `MI_instance` - `has_manifestation` → `Fatigue_instance` is a clinical association, whereas `Epithelial_Damage` -`leads_to` → `Cough_instance` connects a biological process to a manifestation. 
@@ -51,10 +52,9 @@ The current taxonomy groups biological predicates as follows:
 - **balances vs balances_to:** in the current design, `balances` points to what is being corrected, while `balances_to` points to a represented outcome. For example, `LDL_Receptor_High_instance` -`balances_to`→ `LDL_Low_instance` makes that outcome node directly retrievable. The exact boundary of `restores` is a relative to these properties.
 - **mimics vs deviates_into**: `mimics` describes an false/analogous trigger, while `deviates_into` marks a pathological deviation. `mimics` serves a transition from pathological node to homeostatic/physiological node while `deviates_into` marks a transition from physiological node to pathological node.
 
+**3. Object property taxonomy**
+The following tree preserves the hierarchy in the existing project documentation. It is the **OWL object property organisation**; it should not be confused with the five conceptual perspectives. 
 
-
-
- 
 ```
 owl:topObjectProperty
 ├── Biological_Logic
@@ -79,106 +79,7 @@ owl:topObjectProperty
 └── External_Logic
     └── triggers
 ```
- 
-### Genetic_Logic
-Models epigenetic/transcriptional detail (`activates_transcription`,
-`is_translated_into`, `represses_transcription`). Present in the ontology
-but not yet used to the depth this level of granularity.
- 
-### Layer_Transition_Logic — `deviates_into`
-Marks the transition from a normal physiological state to a pathological
-one. This is the edge State 2 is built on: normal physiology
-`deviates_into` pathology, structurally distinct from the false-trigger
-mechanism below.
- 
-### Signal_Semantics_Logic — `mimics`
-Represents a **false trigger** — a signal that structurally resembles a
-real physiological trigger closely enough that downstream machinery
-cannot distinguish it from the real one at the point of sensing.
-
-Case: `Plaque_Rupture --mimics--> Injury`. The cascade fires
-exactly as it would for genuine tissue injury — `Injury` triggers the
-normal physiological clotting response `(Injury → ... → Blood_Clot)` —
-because the entry signal is indistinguishable from a real trigger. The
-pathology isn't in the cascade responding; it's in what triggered it.
-Where this response then fails to resolve (chronic re-triggering, no
-clearance mechanism engaging) is where `Blood_Clot --deviates_into--> Vascular_Blockage` enters — the separate, second failure.
-
-`mimics` and `deviates_into` are often present together at a State 2
-entry point (false trigger + broken brake, per the README's State 2
-description) but are separate predicates because they describe different
-failure mechanisms — one at the input (a fake signal fools the sensor),
-one at the resolution (a real signal is sensed correctly but the
-correction never engages).
- 
-### System_Event_Logic
-The generic cascade machinery — activation, causation, suppression,
-gating, binding, quantitative up/down-regulation. This is the "ordinary
-biology happening" layer, used across all four states.
- 
-### System_Progression_Logic — `progresses_to`
-The one predicate that explicitly involves **time**. Used to bridge
-physiology into pathology across a temporal axis  — e.g. `Vascular_Blockage --progresses_to--> Ischaemia`, `LDL_Deviated --progresses_to--> Atherosclerosis`. 
-It is structurally distinct from `deviates_into`: `deviates_into` 
-marks a state boundary being crossed, `progresses_to` marks a duration between two points.
- 
-### System_Recovery_Logic — `balances`, `balances_to`, `restores`
-Used only in State 1 (Physiological) — the self-resolving loop. The
-distinction between `balances` and `balances_to` is a deliberate query
-design choice, not just a naming variant:
- 
-- `balances` points to **what is being corrected** —
-  `High_Heart_Rate --balances--> Hypoxia`, i.e. the target of correction.
-- `balances_to` points to **the result state after correction** —
-  `LDL_Receptor_High_instance --balances_to--> LDL_Low_instance`, i.e.
-  where the system ends up.
-`balances_to` was chosen for the resolution-chain queries specifically
-because it makes the *outcome* directly queryable — a query walking
-`balances_to` edges returns the actual resolved state at each step, not
-just the name of the problem being solved. This is what
-`physiological_self_resolution.rq` and `physio_vs_patho_divergence.rq`
-depend on: without `balances_to` pointing at a result node, it would be
-impossible to compare the pathological resolution node against the
-Pathological-state instance.
- 
-### System_Regulation_Logic — `feedbacks`, `switches_on`, `switches_off`
-`switches_on`/`switches_off` links Regulatory switch and Sensor. `feedbacks` is
-separate — it represents the closed-loop signal from an Effector back to
-its originating Regulatory_Switch, and is what makes negative/positive
-feedback chains queryable directly in the homeostatic state, e.g.
-`LDL_Receptor_Low --feedbacks--> Cholesterol_ER_Low_instance`.
- 
-### Clinical_Logic
-Bridges `Clinical_Framing` (the disease label) to `Biomedical_Layer`
-(the underlying mechanism) and to `Clinical_Manifestation` (the
-observable symptoms) — two separate bridges, not one:
- 
-- `has_etiology` — disease → root mechanism, e.g.
-  `MI_instance --has_etiology--> Atherosclerosis`.
-- `has_manifestation` — disease → symptom, e.g.
-  `MI_instance --has_manifestation--> Fatigue`.
-- `leads_to` (Symptoms_Logic) — mechanism → symptom, e.g.
-  `Epithelial_Damage --leads_to--> Cough`. This is what
-  `symptoms_by_disease.rq` terminates on.
-Keeping `has_etiology`/`has_manifestation` separate from `leads_to` means
-a disease's link to a symptom, and the underlying mechanism's link to
-that same symptom, are independently queryable — a disease can be
-connected to a manifestation directly at the Clinical_Logic level while
-the *mechanistic reason* for that manifestation is a separate, traceable
-path through the Biomedical_Layer.
- 
-### Drug_Intervention_Logic
-Covered in more detail under Key Findings §3, Secondary Design Decisions 
-(`perturbs_mechanistically`vs `therapeutic_intent`). `Effect` (`resolves`/`resolves_to`) 
-is the State 3 resolution predicate — `resolves_to` specifically is the
-self-describing predicate used in the state graph builder.
- 
-### External_Logic — `triggers`
-The entry point for anything originating outside the biological system
-being modelled — e.g. an allergen exposure or a physical injury event
-initiating a cascade. Kept as its own top-level branch, separate from
-`Biological_Logic`, since a trigger is by definition not itself part of
-the body's own machinery.
+The four branches (Biological_Logic, Clinical_Logic, Drug_Interventio_Logic, External_Logic) organise predicates by broad semantic purpose. In particular, a clinical predicate can bridge perspective, while biological predicates can describe pathways entirely within the Biomedical_Layer. 
  
 ---
 
