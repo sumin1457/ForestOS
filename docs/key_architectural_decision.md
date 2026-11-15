@@ -33,7 +33,7 @@ Forest OS separates five conceptual perspectives around a shared biological back
 
 **Why this matters for querying**. A SPARQL query can follow a clinical entry point into a biological pathway, then reach manifestations or drug targets through relationships with different meanings. 
 
-**2. Relationships within the Biomedical Layer**
+## 2. Relationships within the Biomedical Layer
 
 A second design decision is to **distinguish different kinds of biological relationships within the shared backbone**. Biological layers (L4 Genetic, L3 Immune, L2 Biochemical, L1 Infrastructure, with L1.5 enzyme/receptor categoreis) describe **what kind of node is being represented and its modelling position**. Object properties descrie how nodes are connected. 
 
@@ -52,7 +52,7 @@ The current taxonomy groups biological predicates as follows:
 - **balances vs balances_to:** in the current design, `balances` points to what is being corrected, while `balances_to` points to a represented outcome. For example, `LDL_Receptor_High_instance` -`balances_to`→ `LDL_Low_instance` makes that outcome node directly retrievable. The exact boundary of `restores` is a relative to these properties.
 - **mimics vs deviates_into**: `mimics` describes an false/analogous trigger, while `deviates_into` marks a pathological deviation. `mimics` serves a transition from pathological node to homeostatic/physiological node while `deviates_into` marks a transition from physiological node to pathological node.
 
-**3. Object property taxonomy**
+## 3. Object property taxonomy
 The following tree preserves the hierarchy in the existing project documentation. It is the **OWL object property organisation**; it should not be confused with the five conceptual perspectives. 
 
 ```
@@ -80,48 +80,25 @@ owl:topObjectProperty
     └── triggers
 ```
 The four branches (Biological_Logic, Clinical_Logic, Drug_Interventio_Logic, External_Logic) organise predicates by broad semantic purpose. In particular, a clinical predicate can bridge perspective, while biological predicates can describe pathways entirely within the Biomedical_Layer. 
- 
----
 
-## 2. Major Finding
+## 4. Four-state representation and selective instance divergence
 
-### The universal-node problem: same Tbox class, divergent-point instances
+**4.1. State perspectives**
+The state model distinguishes:
+- State 0 Homeostatic: a reference configuration of regulated biological relationships
+- State 1 Physiological: an ordinary response represented as regulated or resolving back to state 0
+- State 2 Pathological: a context of persistent or dysregulated processes
+- State 3 Pharmacological: a condition modified by drug intervention; it need not return to State 0 or fully resolve State 2.
 
-The four-state model itself exists to capture disease as a dynamic process. 
-Implementing that model then surfaced a structural problem worth documenting on its own:
+**4.2 Selective instance splitting**
+An initial design tension was that shared nodes could obscure context-specific differences. The current approach is to retain a shared TBox class while creating distinct, state-tagged individuals **selectively at meaningful divergence point**. For example, physiological and pathological representations of LX_Receptor can be modelled as different individuals sharing the same rdf:type but carrying different hasSystemState and outgoing assertions. 
 
-The v1 tension "shared universal nodes lose disease context" (see
-`docs/archive/v1_notes.md`) is resolved not by full named-graph separation
-of every instance, but selectively: a node stays under one Tbox class, and
-multiple *instances* of that class exist, each tagged with a different
-`hasSystemState` — but only at nodes that are genuine divergence points or
-structurally crucial for what happens next. Most of the cascade doesn't
-need this; only the nodes where physiological and pathological paths
-actually diverge do.
+This avoid duplicating every node in every state graph. The split is reserved for places where a contrast in represented relationships matters to the comparison; much of the biological backbone remain shared. 
 
-Duplicating every node per state would create over-duplication problem 
-the architecture is trying to avoid. The instance split is
-reserved for nodes where the divergence is the finding — e.g. `LX_Receptor`,
-where the state-specific instances resolve differently and *that
-difference is the point*.
+A comparison query can find inviduals with a shared class and different state lables and inspect their outgoing assertions. The current `physio_vs_patho_divergence.rq` provides an exploratory example of this comparision. 
 
-Because both instances share `rdf:type`, they're queryable as "sister
-nodes": cross back to the shared class, find the other instance(s) under
-it, and diff their outgoing edges directly — no separate schema needed per
-state. This can be expressed either as a same-default-graph query
-(`FILTER EXISTS` / direct `hasSystemState` match, as in
-`physio_vs_patho_divergence.rq`) or scoped via `GRAPH {}` against the named
-state graphs, depending on whether the comparison needs to stay within one
-state's context or cross between two.
-
-`physio_vs_patho_divergence.rq`'s LX_Receptor result is the first
-concrete case of this pattern doing real work.
-
----
-
-## 3. Key Architectural Decisions 
-
-### Core State-Model Decisions
+## 5. State-specific named graphs: construction decisions
+The Python implementation derives four named state graphs using SPARQL query. The following decision and reasoning shows what rules are applied for named graph.
 
 | Decision | Reasoning |
 |---|---|
@@ -130,15 +107,23 @@ concrete case of this pattern doing real work.
 | **Self-describing predicates bypass hasSystemState** | `resolves_to` (State 3), `balances_to`/`restores` (State 1), `deviates_into`/`mimics` (State 2) are unambiguous by predicate alone — asserted directly into their graph, no tag check needed. |
 | **Named graphs are filtered views over one default graph** | The default graph holds every asserted node and edge, untyped by state. The four state graphs (Homeostatic / Physiological / Pathological / Pharmacological) are built from it, not maintained as a separate source of truth. Rebuilding from the default graph after every Protégé export is the intended workflow (`rebuild_state_graphs()`). |
 
-### Secondary Design Decisions
+## 6. Additional Decisions
 
 | Decision | Reasoning |
 |---|---|
 | **perturbs_mechanistically vs therapeutic_intent** | Mechanism (`agonises_receptor`/`antagonises_receptor`/`upregulates`/`downregulates`) and clinical intent (`therapeutic_activation`/`therapeutic_suppression`) are asserted as independent properties, not collapsed into one label. A drug can mechanistically antagonise an inhibitory target to achieve a net activating intent — keeping them separate lets the ontology represent that gap. |
-| **Pharmacological graph added as a 4th state** | v1 only materialised Homeostatic/Physiological/Pathological as named graphs; drug reasoning worked only by querying `resolves_to` directly against the default graph. v2 gives State 3 the same named-graph convenience as the others. |
-| **intervenesAtLayerScore removed** | Replaced by SPARQL `rdfs:subClassOf*` traversal from `perturbs_mechanistically` target (`drug_layer_depth.sparql`). Structure derives the score — no manual assertion. |
 
-### Deprioritized / Paused
+## 7. Open questions for further refinement
+**1. Biological alignment:** Which current classes and properties can be reused from BFO, OBO Fondry ontologies, and Relation Ontology, and which require project-specific relations?
+
+**2. Context representation:** Are selectively split individuals and named graphs the most appropriate way to express contextualised assertions?
+
+**3. Property Semantics:** Can the intended differences among balances, balances_to, restores, resolves_to, mimis, and deviates_into be stated as precise constraints? 
+
+**4. Evaluation:** Can a narrowly scoped biomedical case study, a set of competency qeustions, and reasonser checks reveal modelling errors or unsupported conclusions? 
+
+
+## 8. Deprioritized / Paused ideas
 
 | Decision | Reasoning |
 |---|---|
