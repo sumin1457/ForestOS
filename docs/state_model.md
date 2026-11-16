@@ -1,24 +1,28 @@
 # The Four-State Model
 
-This document expands on the state summary in the main README with full
-diagrams and the SPARQL results that verify each claim. Read the README's
-"Conceptual Framework" and "Four-Layer Biological Model" sections first —
-this document assumes that skeleton.
+This document introduces the state-based modelling approach developed in Forest OS to explore how context-dependent biological behaviourt can be represented within an OWL-based ontology. 
+
+A central modelling challenge is **how to preserve shared biological knowledge without unnecessary duplication**, while representing differences in biological regulation across homeostatic, physiological, pathological and pharmacologically modified contexts. Rather than constructing entirely separate biological model for each sate, the approach maintains a shared class-level structure (TBox) and introduces state-specific individuals and assertions where meaningful biological differences need to be represented. 
+
+This approach is intended to make **context-dependent relationships queryable**, particularly changes associated with pathological disruption and pharmacological intervention, including mechanisms modified by treatment and underlying pathological processes that may remain unresolved. 
+
+It expands on the `Biomedical_Layer` from conceptual framework introduced in the main README, providing state-specific diagrams, biomedical case studies and SPARQL queries that examine how these relationships are represented in the current RDF graph.
+
+The four states are comparative snapshots rather than a simulation of biological processes over time. 
 
 ---
 
 ## The States, Briefly
+The four states provide comparative snapshots of biological regulation under different conditions. They share an underlying biological framework, while allowing context-specific mechanisms and relationhips to be represented where relevant. 
 
 | State | Name | Loop | What's happening |
 |---|---|---|---|
-| 0 | Homeostatic | Closed | Ordinary continuous self-correction at rest |
-| 1 | Physiological | Closed | Larger/acute trigger, same architecture, still resolves |
-| 2 | Pathological | **Blocked** | False trigger and/or broken brake — no endogenous path back |
-| 3 | Pharmacological | Closed (externally) | Drug bypasses the blocked step; root cause remains open |
+| 0 | Homeostatic | Closed | Baseline regulation, where biological mechanism maintain a relatively stable internal environment through ongoing regulatory processes. |
+| 1 | Physiological | Closed | A response to a perturbation in which regulated mechanisms remain capable of resolving the deviation and supporting a return towards homeostasis |
+| 2 | Pathological | **Blocked** | A condition in which regulatory mechanisms are disrupted or insufficient, allowing pathological processes or deviations to persist. |
+| 3 | Pharmacological | Closed (externally) | A drug-modified condition in which selected biological mechanisms are altered, potentially improving downstream outcomes while some underlying pathological processes remain unresolved. |
 
-States 0 and 1 are both the healthy body. State 2 is the only state where
-something has actually gone wrong. State 3 is not a return to State 0/1 —
-it's a different route to the same output.
+Importantly, the pharmacological state does not necessarily represent a return to homoestasis. The model is intended to distinguish between mechanisms modified by treatment and those that may remain pathologically altered. 
 
 ---
 
@@ -66,27 +70,27 @@ SFA ever being addressed. The drug closes the LDL loop; the root cause
 
 ---
 
-## SPARQL Verification
-
-The four diagrams above are hand-built in Protégé. The following queries
-confirm the same structure holds in the asserted graph.
+## SPARQL Exploration of State-Specific Relationships
+The following SPARQL queries were developed to explore how state-dependent biological relationships are represented in the current RDF graph. They examine differences between physiological, pathological and pharmacologically modified contexts, particularly the representation of regulatory divergence and potentially unresolved pathological mechanisms.
 
 **Which pathological nodes have no pharmacological resolution?**
 (`sparql/pathological_resolution_status.rq`)
 
-Saturated_Fatty_Acid, Reactive_Oxygen_Species, and Liver_X_Receptor come
-back `"Unresolved"` — no downstream node in `Pharmacological` state. Statin
-resolves `Oxysterol` and `LDL` but does not touch the SFA/ROS root. This
-is the queryable version of "the drug closes the LDL loop; the root cause
-remains open."
+In the current asserted graph, Saturated_Fatty_Acid, Reactive_Oxygen_Species and Liver_X_Receptor are returned with the query-defined status "Unresolved", as the query does not identify a corresponding pharmacological resolution relationship for these components.
 
-**Does the same node class resolve differently by state?**
-(`sparql/physio_vs_patho_divergence.rq`)
+By contrast, the model represents statin-associated changes involving Oxysterol and LDL. This distinction is intended to illustrate how the ontology can differentiate mechanisms affected by treatment from pathological processes that are not represented as resolved.
 
-`LX_Receptor` (LXR) is the clearest case: the State 1 (physiological)
-instance has an outgoing `balances_to` edge. The State 2
-(pathological) instance of the *same class* has no such edge. This shows
-why State 2 is a `Blocked loop` and where it diverges from the physiological state.
+However, an "Unresolved" query result indicates the absence of a qualifying relationship under the current query criteria, rather than proving that the biological mechanism cannot be resolved.
+
+**How do represented regulatory relationships differ between physiological and pathological contexts?**
+(sparql/physio_vs_patho_divergence.rq)
+
+LX_Receptor (LXR) provides an illustrative example. In the current model, its State 1 (physiological) individual has an asserted balances_to relationship, whereas the corresponding State 2 (pathological) individual does not.
+
+This difference illustrates how state-specific individuals can be used to represent regulatory divergence while retaining a shared class-level structure.
+
+The absence of a balances_to assertion in State 2 should not, on its own, be interpreted as proof that the corresponding biological relationship is impossible or definitively absent.
+
 
 Full query definitions and result tables: [`sparql/README.md`](../sparql/README.md).
 
